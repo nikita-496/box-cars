@@ -8,7 +8,6 @@ import viteLogo from "/vite.svg";
 
 export function App() {
   const [count, setCount] = useState(0);
-  const a = 12;
   return (
     <>
       <div>
