@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // Strict Checks
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+
+    // Linter Checks
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Advanced
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "useUnknownInCatchVariables": true
+  }
+}
