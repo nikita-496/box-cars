@@ -3,10 +3,10 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
-    "module": "commonjs",
+    "module": "ES2020",
     "moduleResolution": "Node",
-    "types": ["node"],
-    "target": "es6",
+    "types": ["node", "vite/client"],
+    "target": "ES2020",
     "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
