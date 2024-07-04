@@ -1,30 +1,66 @@
-import { basePublicApiClients } from "@/api/clients";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+
+interface IHttpClient {
+  get: () => Promise<AxiosResponse>;
+  post: () => Promise<AxiosResponse>;
+  put: () => Promise<AxiosResponse>;
+  patch: () => Promise<AxiosResponse>;
+  delete: () => Promise<AxiosResponse>;
+}
+
+axios.defaults.headers.post["Accept"] = "application/json";
+axios.defaults.headers.post["Content-Type"] = "application/json";
+
+export const baseApiClient = axios.create({});
+baseApiClient.defaults.headers.get["x-rapidapi-key"] = import.meta.env[
+  "VITE_PUBLIC_API_KEY"
+];
+baseApiClient.defaults.headers.get["x-rapidapi-host"] = import.meta.env[
+  "VITE_PUBLIC_API_HOST"
+];
 
 export class HttpClient<
-  Request extends object,
+  RequestData extends object | undefined,
   Response extends Array<object>,
-> {
-  private options: Request;
-  constructor(optionsValue: Request) {
-    this.options = optionsValue;
+> implements IHttpClient
+{
+  protected requestConfig: AxiosRequestConfig<RequestData>;
+  constructor(requestConfigValue: AxiosRequestConfig<RequestData>) {
+    this.requestConfig = requestConfigValue;
   }
   async get() {
-    const response = await basePublicApiClients<Response>({
-      ...this.options,
+    const response = await baseApiClient<Response>({
+      ...this.requestConfig,
       method: "GET",
     });
     return response;
   }
   async post() {
-    await basePublicApiClients({ ...this.options, method: "POST" });
+    const response = await baseApiClient({
+      ...this.requestConfig,
+      method: "POST",
+    });
+    return response;
   }
   async put() {
-    await basePublicApiClients({ ...this.options, method: "PUT" });
+    const response = await baseApiClient({
+      ...this.requestConfig,
+      method: "PUT",
+    });
+    return response;
   }
   async patch() {
-    await basePublicApiClients({ ...this.options, method: "PATCH" });
+    const response = await baseApiClient({
+      ...this.requestConfig,
+      method: "PATCH",
+    });
+    return response;
   }
   async delete() {
-    await basePublicApiClients({ ...this.options, method: "DELETE" });
+    const response = await baseApiClient({
+      ...this.requestConfig,
+      method: "DELETE",
+    });
+    return response;
   }
 }

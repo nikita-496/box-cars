@@ -1,8 +1,8 @@
+import { ClientStorage } from "@/api/clientStorage";
 import { HttpClient } from "@/api/httpClient";
-import { GetOptionsRequest } from "@/api/request.type";
-import { PublicRequestConfig } from "@/api/requestConfig";
 import { MakesResponse } from "@/api/response.type";
 import { DIRECTION, LIMIT, PAGE, SORT } from "@/constants/queryParams";
+import { AxiosRequestConfig } from "axios";
 
 const MAKES_END_POINT = "/makes";
 
@@ -20,15 +20,12 @@ export class MakesService {
       page: PAGE,
     },
   ): Promise<MakesResponse> {
-    const publicRequestConfig = new PublicRequestConfig<
-      GetQueryParams,
-      MakesResponse
-    >(payload, MAKES_END_POINT);
-    const request = publicRequestConfig.get();
-    const httpClient = new HttpClient<
-      GetOptionsRequest<GetQueryParams, MakesResponse>,
-      MakesResponse
-    >(request);
+    const clientStorage = new ClientStorage();
+    const requestConfig: AxiosRequestConfig = {
+      url: clientStorage.cardApi2PUrl + MAKES_END_POINT,
+      params: payload,
+    };
+    const httpClient = new HttpClient<undefined, MakesResponse>(requestConfig);
     const makesResponse = await httpClient.get();
     return makesResponse.data;
   }
