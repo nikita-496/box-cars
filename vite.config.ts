@@ -3,7 +3,7 @@ import path from "path";
 import { defineConfig, loadEnv } from "vite";
 
 const env = loadEnv("all", process.cwd());
-const BASE_PUBLIC_API_URL = env["VITE_BASE_PUBLIC_API_URL"];
+const CAR_API2_P_URL = env["VITE_CAR_API2_P_URL"];
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -21,7 +21,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: BASE_PUBLIC_API_URL,
+        target: CAR_API2_P_URL,
         changeOrigin: true,
         secure: false,
       },
