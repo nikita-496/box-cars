@@ -29,6 +29,11 @@ module.exports = {
         format: ["PascalCase"],
         prefix: ["I"],
       },
+      {
+        selector: "typeParameter",
+        format: ["PascalCase"],
+        custom: { regex: "^T[A-Z]", match: true },
+      },
     ],
     "@typescript-eslint/no-explicit-any": ["error"],
     "@typescript-eslint/no-unused-vars": [
@@ -41,9 +46,9 @@ module.exports = {
     "perfectionist/sort-imports": [
       "error",
       {
-        "type": "natural",
-        "order": "asc",
-        "groups": [
+        type: "natural",
+        order: "asc",
+        groups: [
           "type",
           "react",
           "nanostores",
@@ -55,7 +60,7 @@ module.exports = {
           "side-effect",
           "style",
           "object",
-          "unknown"
+          "unknown",
         ],
         "newlines-between": "always",
         "internal-pattern": [
@@ -64,8 +69,8 @@ module.exports = {
           "@/pages/**",
           "@/lib/**",
           "@/assets/**",
-        ]
-      }
+        ],
+      },
     ],
     "no-duplicate-imports": ["error"],
   },
