@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-interface IHttpClient {
+export interface IHttpClient {
   get: () => Promise<AxiosResponse>;
   post: () => Promise<AxiosResponse>;
   put: () => Promise<AxiosResponse>;
@@ -8,56 +8,45 @@ interface IHttpClient {
   delete: () => Promise<AxiosResponse>;
 }
 
-axios.defaults.headers.post["Accept"] = "application/json";
-axios.defaults.headers.post["Content-Type"] = "application/json";
-
-export const baseApiClient = axios.create({});
-baseApiClient.defaults.headers.get["x-rapidapi-key"] = import.meta.env[
-  "VITE_PUBLIC_API_KEY"
-];
-baseApiClient.defaults.headers.get["x-rapidapi-host"] = import.meta.env[
-  "VITE_PUBLIC_API_HOST"
-];
-
 export class HttpClient<
-  RequestData extends object | undefined,
-  Response extends Array<object>,
+  TRequest extends object | undefined,
+  TResponse extends Array<object>,
 > implements IHttpClient
 {
-  protected requestConfig: AxiosRequestConfig<RequestData>;
-  constructor(requestConfigValue: AxiosRequestConfig<RequestData>) {
+  protected requestConfig: AxiosRequestConfig<TRequest>;
+  constructor(requestConfigValue: AxiosRequestConfig<TRequest>) {
     this.requestConfig = requestConfigValue;
   }
   async get() {
-    const response = await baseApiClient<Response>({
+    const response = await axios<TResponse>({
       ...this.requestConfig,
       method: "GET",
     });
     return response;
   }
   async post() {
-    const response = await baseApiClient({
+    const response = await axios({
       ...this.requestConfig,
       method: "POST",
     });
     return response;
   }
   async put() {
-    const response = await baseApiClient({
+    const response = await axios({
       ...this.requestConfig,
       method: "PUT",
     });
     return response;
   }
   async patch() {
-    const response = await baseApiClient({
+    const response = await axios({
       ...this.requestConfig,
       method: "PATCH",
     });
     return response;
   }
   async delete() {
-    const response = await baseApiClient({
+    const response = await axios({
       ...this.requestConfig,
       method: "DELETE",
     });
