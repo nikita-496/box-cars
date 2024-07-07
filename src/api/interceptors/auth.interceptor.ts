@@ -12,7 +12,7 @@ const isExpired = (date: string) => {
   }
 };
 
-export const authRequestauthInterceptor = async (
+export const authRequestInterceptor = async (
   config: InternalAxiosRequestConfig,
 ) => {
   let authData = authStorage.get();
