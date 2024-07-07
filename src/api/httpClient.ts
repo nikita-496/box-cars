@@ -1,30 +1,55 @@
-import { basePublicApiClients } from "@/api/clients";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+
+export interface IHttpClient {
+  get: () => Promise<AxiosResponse>;
+  post: () => Promise<AxiosResponse>;
+  put: () => Promise<AxiosResponse>;
+  patch: () => Promise<AxiosResponse>;
+  delete: () => Promise<AxiosResponse>;
+}
 
 export class HttpClient<
-  Request extends object,
-  Response extends Array<object>,
-> {
-  private options: Request;
-  constructor(optionsValue: Request) {
-    this.options = optionsValue;
+  TRequest extends object | undefined,
+  TResponse extends Array<object>,
+> implements IHttpClient
+{
+  protected requestConfig: AxiosRequestConfig<TRequest>;
+  constructor(requestConfigValue: AxiosRequestConfig<TRequest>) {
+    this.requestConfig = requestConfigValue;
   }
   async get() {
-    const response = await basePublicApiClients<Response>({
-      ...this.options,
+    const response = await axios<TResponse>({
+      ...this.requestConfig,
       method: "GET",
     });
     return response;
   }
   async post() {
-    await basePublicApiClients({ ...this.options, method: "POST" });
+    const response = await axios({
+      ...this.requestConfig,
+      method: "POST",
+    });
+    return response;
   }
   async put() {
-    await basePublicApiClients({ ...this.options, method: "PUT" });
+    const response = await axios({
+      ...this.requestConfig,
+      method: "PUT",
+    });
+    return response;
   }
   async patch() {
-    await basePublicApiClients({ ...this.options, method: "PATCH" });
+    const response = await axios({
+      ...this.requestConfig,
+      method: "PATCH",
+    });
+    return response;
   }
   async delete() {
-    await basePublicApiClients({ ...this.options, method: "DELETE" });
+    const response = await axios({
+      ...this.requestConfig,
+      method: "DELETE",
+    });
+    return response;
   }
 }

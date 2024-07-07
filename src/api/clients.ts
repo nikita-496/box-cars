@@ -1,12 +1,22 @@
+import {
+  baseCarServerUrl,
+  baseServerUrl,
+  carApiHeaders,
+  routesPrefix,
+} from "@/core/config/api.config";
 import axios from "axios";
 
-axios.defaults.headers.post["Accept"] = "application/json";
-axios.defaults.headers.post["Content-Type"] = "application/json";
+axios.defaults.headers.common["Accept"] = "application/json";
+axios.defaults.headers.common["Content-Type"] = "application/json";
 
-export const basePublicApiClients = axios.create({});
-basePublicApiClients.defaults.headers.get["x-rapidapi-key"] = import.meta.env[
-  "VITE_PUBLIC_API_KEY"
-];
-basePublicApiClients.defaults.headers.get["x-rapidapi-host"] = import.meta.env[
-  "VITE_PUBLIC_API_HOST"
-];
+export const baseApiClient = axios.create({
+  baseURL: baseServerUrl,
+});
+
+export const baseCarApiClient = axios.create({
+  baseURL: `${baseCarServerUrl}${routesPrefix}`,
+});
+baseCarApiClient.defaults.headers["x-rapidapi-host"] =
+  carApiHeaders["x-rapidapi-host"];
+baseCarApiClient.defaults.headers["x-rapidapi-key"] =
+  carApiHeaders["x-rapidapi-key"];
