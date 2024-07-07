@@ -1,6 +1,7 @@
 import { refresh } from "@/api/auth.api";
+import { AUTH_END_POINT } from "@/core/config/api.config";
 import { authStorage } from "@/core/libs/localStorage";
-import { InternalAxiosRequestConfig } from "axios";
+import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
 
 const isExpired = (date: string) => {
   try {
@@ -38,4 +39,17 @@ export const authRequestInterceptor = async (
     config.headers["Authorization"] = `Bearer ${authData.access}`;
   }
   return config;
+};
+export const authResponseInterceptor = async (error: AxiosError) => {
+  const status = error.request ? error.response?.status : null;
+  if (status === 401) {
+    const refreshToken = authStorage.get();
+    const { data } = await axios.post(AUTH_END_POINT + "/refresh", {
+      token: refreshToken,
+    });
+    authStorage.set(data);
+    axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+    return axios(error.config as InternalAxiosRequestConfig);
+  }
+  return Promise.reject(error);
 };

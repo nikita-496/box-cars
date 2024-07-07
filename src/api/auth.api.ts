@@ -10,7 +10,7 @@ import axios from "axios";
  */
 
 export const refresh = (payload: API.Auth.RefreshCredentials) =>
-  axios.post<API.Auth.AuthResonse>(AUTH_END_POINT + "/login", payload);
+  axios.post<API.Auth.AuthResonse>(AUTH_END_POINT + "/refresh", payload);
 
 export const login = (payload: API.Auth.LoginCredentials) =>
   axios.post<API.Auth.AuthResonse>(AUTH_END_POINT + "/login", payload);
