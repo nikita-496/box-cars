@@ -1,0 +1,20 @@
+export type BodyM = {
+  id: global.Id;
+  make_model_trim_id: global.Id;
+  type: string;
+  doors: number;
+  length: string;
+  width: string;
+  seats: number;
+  height: string;
+  wheel_base: string;
+  front_track: null;
+  rear_track: null;
+  ground_clearance: string;
+  cargo_capacity: string;
+  max_cargo_capacity: string;
+  curb_weight: number;
+  gross_weight: null;
+  max_payload: null;
+  max_towing_capacity: number;
+};
