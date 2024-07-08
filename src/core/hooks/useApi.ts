@@ -2,7 +2,7 @@ import { apiReducer } from "@/core/reducers/apiReducer";
 import { API } from "@/core/types/api.type";
 import { useEffect, useReducer } from "react";
 
-export function useApi<
+export const useApi = <
   TServiceFunction extends API.Service.Function<TModel, API.Response<TModel>>,
   TModel extends object,
 >(
@@ -12,7 +12,7 @@ export function useApi<
     params: {},
     payload: undefined,
   },
-) {
+) => {
   const [result, dispatch] = useReducer(apiReducer, {
     status: "idle",
     data: {},
@@ -31,4 +31,4 @@ export function useApi<
   }, []);
 
   return result;
-}
+};
