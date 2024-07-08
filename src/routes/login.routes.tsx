@@ -9,11 +9,11 @@ export const loginRoutes = {
   children: [
     {
       index: true,
-      elements: <SignIn />,
+      element: <SignIn />,
     },
     {
       path: "register",
-      elements: <SignUp />,
+      element: <SignUp />,
     },
   ],
 };
