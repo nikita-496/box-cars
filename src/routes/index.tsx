@@ -10,6 +10,7 @@ import { termsRoutes } from "@/routes/terms.routes";
 import { createBrowserRouter } from "react-router-dom";
 
 import { Home } from "@/pages/Home";
+import { NotFound } from "@/pages/NotFound";
 import { About } from "@/pages/about/About";
 import { ContactUs } from "@/pages/contactUs/ContactUs";
 import { Faq } from "@/pages/faq/Faq";
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
       dealerDetail,
       loginRoutes,
       profileRoutes,
+      {
+        path: "*",
+        element: <NotFound />,
+      },
     ],
   },
 ]);
