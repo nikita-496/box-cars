@@ -13,6 +13,7 @@ import { Home } from "@/pages/Home";
 import { NotFound } from "@/pages/NotFound";
 import { About } from "@/pages/about/About";
 import { ContactUs } from "@/pages/contactUs/ContactUs";
+import { DesignSystem } from "@/pages/designSystem/DesignSystem";
 import { Faq } from "@/pages/faq/Faq";
 import { Pricing } from "@/pages/pricing/Pricing";
 
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
       dealerDetail,
       loginRoutes,
       profileRoutes,
+      {
+        path: "design-system",
+        element: <DesignSystem />,
+      },
       {
         path: "*",
         element: <NotFound />,
