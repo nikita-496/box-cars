@@ -1,10 +1,31 @@
 import { theme } from "@/core/config/themes.config";
+import { createUuid } from "@/core/utils/createUuid";
 import { Typography } from "@mui/material";
-import { Box, Stack, ThemeProvider } from "@mui/system";
+import { ThemeProvider } from "@mui/material/styles";
+import { Box, Stack } from "@mui/system";
 import { FC } from "react";
 
+import { ThemeControlledAccordion } from "@/components/designSystem/accordion/Accordion";
 import { ThemeButton } from "@/components/designSystem/button/ThemeButton";
 import { ThemeIcon } from "@/components/designSystem/icon/ThemeIcon";
+
+const accoedionContent = [
+  {
+    id: createUuid(),
+    title: "What methods of payments are supported?",
+    text: "Cras vitae ac nunc orci. Purus amet tortor non at phasellus ultricies hendrerit. Eget a, sit morbi nunc sit id massa. Metus, scelerisque volutpat nec sit vel donec.",
+  },
+  {
+    id: createUuid(),
+    title: "What methods of payments are supported?",
+    text: "Cras vitae ac nunc orci. Purus amet tortor non at phasellus ultricies hendrerit. Eget a, sit morbi nunc sit id massa. Metus, scelerisque volutpat nec sit vel donec.",
+  },
+  {
+    id: createUuid(),
+    title: "What methods of payments are supported?",
+    text: "Cras vitae ac nunc orci. Purus amet tortor non at phasellus ultricies hendrerit. Eget a, sit morbi nunc sit id massa. Metus, scelerisque volutpat nec sit vel donec.",
+  },
+];
 
 export const DesignSystem: FC = () => {
   return (
@@ -159,6 +180,10 @@ export const DesignSystem: FC = () => {
       <ThemeIcon icon="GasolinePump" />
       <ThemeIcon icon="Label" />
       <ThemeIcon icon="Share" fill="black" />
+      <ThemeIcon icon="Burger" />
+      <ThemeIcon icon="Minus" />
+      <h3>Accordion</h3>
+      <ThemeControlledAccordion content={accoedionContent} />
     </ThemeProvider>
   );
 };

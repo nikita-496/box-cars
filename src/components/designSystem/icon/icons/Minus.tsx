@@ -8,7 +8,7 @@ const SvgIcon = styled(MuiSvgIcon, {
   fill: "none",
   strokeLinecap: "round",
   strokeLinejoin: "round",
-  strokeWidth: "0.1px",
+  strokeWidth: "0px",
   xmlns: "http://www.w3.org/2000/svg",
 }));
 
