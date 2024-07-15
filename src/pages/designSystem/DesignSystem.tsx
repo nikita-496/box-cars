@@ -1,31 +1,10 @@
 import { theme } from "@/core/config/themes.config";
-import { createUuid } from "@/core/utils/createUuid";
-import { Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { Box, Stack } from "@mui/system";
 import { FC } from "react";
 
-import { ThemeControlledAccordion } from "@/components/designSystem/accordion/Accordion";
-import { ThemeButton } from "@/components/designSystem/button/ThemeButton";
+import { Button } from "@/components/base/button";
 import { ThemeIcon } from "@/components/designSystem/icon/ThemeIcon";
-
-const accoedionContent = [
-  {
-    id: createUuid(),
-    title: "What methods of payments are supported?",
-    text: "Cras vitae ac nunc orci. Purus amet tortor non at phasellus ultricies hendrerit. Eget a, sit morbi nunc sit id massa. Metus, scelerisque volutpat nec sit vel donec.",
-  },
-  {
-    id: createUuid(),
-    title: "What methods of payments are supported?",
-    text: "Cras vitae ac nunc orci. Purus amet tortor non at phasellus ultricies hendrerit. Eget a, sit morbi nunc sit id massa. Metus, scelerisque volutpat nec sit vel donec.",
-  },
-  {
-    id: createUuid(),
-    title: "What methods of payments are supported?",
-    text: "Cras vitae ac nunc orci. Purus amet tortor non at phasellus ultricies hendrerit. Eget a, sit morbi nunc sit id massa. Metus, scelerisque volutpat nec sit vel donec.",
-  },
-];
 
 export const DesignSystem: FC = () => {
   return (
@@ -36,131 +15,12 @@ export const DesignSystem: FC = () => {
         <p>Common</p>
         <Stack direction="row" spacing={2}>
           <Stack alignItems="center">
-            <Typography variant="body2">white</Typography>
             <Box sx={{ bgcolor: "common.white", width: 40, height: 20 }} />
           </Stack>
           <Stack alignItems="center">
-            <Typography variant="body2">black</Typography>
             <Box sx={{ bgcolor: "common.black", width: 40, height: 20 }} />
           </Stack>
         </Stack>
-      </Stack>
-      <h3>Buttons</h3>
-      <Stack gap={2} alignItems="center" mb={2}>
-        <ThemeButton endIcon={<ThemeIcon icon="ArrowOutward" />}>
-          Contained Light
-        </ThemeButton>
-      </Stack>
-      <Stack gap={2} alignItems="center" mb={2}>
-        <ThemeButton color="blueDark">Contained Primary Dark</ThemeButton>
-      </Stack>
-      <Stack gap={2} alignItems="center" mb={2}>
-        <ThemeButton color="blueLight" sx={{ borderRadius: 12.5 }}>
-          Contained Primary Light Rounded
-        </ThemeButton>
-        <Stack gap={2} alignItems="center" mb={2}>
-          <ThemeButton color="blueDark">Contained Primary Icon</ThemeButton>
-        </Stack>
-      </Stack>
-      <Stack gap={2} alignItems="center" mb={2}>
-        <ThemeButton variant="outlined" color="neutralLight">
-          Oultined Neutral Light
-        </ThemeButton>
-        <ThemeButton
-          variant="outlined"
-          color="neutralLight"
-          sx={{
-            borderRadius: 12.5,
-            padding: "0.82em 0em",
-            "&:hover": {
-              borderColor: "common.black",
-              bgcolor: "common.black",
-            },
-            "& .MuiSvgIcon-root": {
-              stroke: "black",
-            },
-            "& .MuiSvgIcon-root path": {
-              fill: "black",
-            },
-            "&:hover .MuiSvgIcon-root": {
-              stroke: "white",
-            },
-            "&:hover .MuiSvgIcon-root g path": {
-              fill: "white",
-            },
-          }}
-        >
-          <ThemeIcon icon="ArrowForwardIos" />
-        </ThemeButton>
-      </Stack>
-      <Stack
-        gap={2}
-        alignItems="center"
-        sx={{ bgcolor: "common.black" }}
-        mb={2}
-      >
-        <ThemeButton variant="outlined" color="neutralDark">
-          Oultined Neutral Dark
-        </ThemeButton>
-        <ThemeButton
-          variant="outlined"
-          color="neutralLight"
-          sx={{
-            borderRadius: 12.5,
-            padding: "0.82em 0em",
-            borderColor: theme.palette.grey[400],
-            "&:hover": {
-              borderColor: theme.palette.grey[400],
-              bgcolor: "grey.50",
-            },
-            "& .MuiSvgIcon-root": {
-              stroke: "white",
-            },
-            "& .MuiSvgIcon-root path": {
-              fill: "white",
-            },
-            "&:hover .MuiSvgIcon-root": {
-              stroke: "black",
-            },
-            "&:hover .MuiSvgIcon-root g path": {
-              fill: "black",
-            },
-          }}
-        >
-          <ThemeIcon icon="ArrowForwardIos" />
-        </ThemeButton>
-      </Stack>
-      <Stack gap={2} alignItems="center">
-        <ThemeButton
-          variant="outlined"
-          color="neutralLight"
-          sx={{
-            borderRadius: 12.5,
-            padding: "0.82em 0em",
-            borderColor: theme.palette.grey[400],
-            "&.MuiButtonBase-root:hover": {
-              borderColor: theme.palette.grey[400],
-              bgcolor: "grey.50",
-            },
-          }}
-        >
-          <ThemeIcon icon="ArrowBackIos" />
-        </ThemeButton>
-        <ThemeButton
-          variant="outlined"
-          color="neutralLight"
-          sx={{
-            borderRadius: 12.5,
-            padding: "0.82em 0em",
-            borderColor: theme.palette.grey[400],
-            "&.MuiButtonBase-root:hover": {
-              borderColor: theme.palette.grey[400],
-              bgcolor: "grey.50",
-            },
-          }}
-        >
-          <ThemeIcon icon="ArrowForwardIos" />
-        </ThemeButton>
       </Stack>
       <h3>Icons</h3>
       <ThemeIcon icon="ArrowBackIos" />
@@ -182,8 +42,52 @@ export const DesignSystem: FC = () => {
       <ThemeIcon icon="Share" fill="black" />
       <ThemeIcon icon="Burger" />
       <ThemeIcon icon="Minus" />
-      <h3>Accordion</h3>
-      <ThemeControlledAccordion content={accoedionContent} />
+      <h3>Base</h3>
+      <h4>Button</h4>
+      <Stack gap={2} direction="row">
+        <Button>Default Button</Button>
+        <Button color="blueDark" sx={{ borderRadius: 12.5 }}>
+          Sign Up
+        </Button>
+        <Button
+          variant="outlined"
+          sx={(theme) => ({
+            "&": {
+              borderRadius: 7.5,
+              backgroundColor: theme.palette.contrastLight.main,
+              borderColor: theme.palette.contrastLight.dark,
+              color: theme.palette.contrastLight.contrastText,
+            },
+            "&:hover": {
+              transition: "0.5s",
+              backgroundColor: theme.palette.contrastLight.dark,
+              borderColor: theme.palette.contrastLight.main,
+              color: theme.palette.contrastDark.contrastText,
+            },
+          })}
+        >
+          Light Outlined Button
+        </Button>
+        <Button
+          variant="outlined"
+          sx={(theme) => ({
+            "&": {
+              borderRadius: 7.5,
+              backgroundColor: theme.palette.contrastDark.main,
+              borderColor: theme.palette.contrastDark.dark,
+              color: theme.palette.contrastDark.contrastText,
+            },
+            "&:hover": {
+              transition: "0.5s",
+              backgroundColor: theme.palette.contrastDark.dark,
+              borderColor: theme.palette.contrastDark.main,
+              color: theme.palette.contrastLight.contrastText,
+            },
+          })}
+        >
+          Dark Outlined Button
+        </Button>
+      </Stack>
     </ThemeProvider>
   );
 };
