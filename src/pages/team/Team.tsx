@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { NavLink } from "react-router-dom";
+
+import { NavLink } from "@/components/base/navLink";
 
 export const Team: FC = () => {
   return (

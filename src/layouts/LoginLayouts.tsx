@@ -1,5 +1,7 @@
 import { FC } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
+import { NavLink } from "@/components/base/navLink";
 
 export const LoginLayouts: FC = () => {
   return (

@@ -1,6 +1,8 @@
 import { createUuid } from "@/core/utils/createUuid";
 import { FC } from "react";
-import { NavLink, RelativeRoutingType } from "react-router-dom";
+import { RelativeRoutingType } from "react-router-dom";
+
+import { NavLink } from "@/components/base/navLink/NavLink";
 
 export type BreadcrumbProps = {
   options: {

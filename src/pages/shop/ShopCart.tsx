@@ -1,7 +1,10 @@
 import { FC } from "react";
-import { NavLink } from "react-router-dom";
 
-import { Breadcrumb, BreadcrumbProps } from "@/components/Breadcrumb";
+import { NavLink } from "@/components/base/navLink";
+import {
+  Breadcrumb,
+  BreadcrumbProps,
+} from "@/components/designSystem/navigation/Breadcrumb";
 
 // TODO:  { link: "Shop Detail", to: "/shop/1", relative: "path" },
 const breadcrumbOptions: BreadcrumbProps = {

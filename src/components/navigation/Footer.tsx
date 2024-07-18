@@ -1,12 +1,13 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
+
+import { NavLink } from "@/components/base/navLink";
 
 export const Footer: FC = () => {
   return (
     <footer>
       <span>
         &#169;
-        <Link to="/">2024 Boxcars.com. All rights reserved.</Link>
+        <NavLink to="/">2024 Boxcars.com. All rights reserved.</NavLink>
       </span>
     </footer>
   );
