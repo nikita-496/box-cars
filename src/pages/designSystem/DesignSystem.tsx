@@ -21,6 +21,7 @@ import { Icon } from "@/components/base/icon";
 import { NavLink } from "@/components/base/navLink";
 import { Heading, Typography } from "@/components/base/typography";
 import { Accrodion } from "@/components/designSystem/accordion/Accrodion";
+import { ControlledAccordion } from "@/components/designSystem/accordion/ControlledAccordion";
 import { Card } from "@/components/designSystem/card/Card";
 import { Dropdown } from "@/components/designSystem/dropdown/Dropdown";
 import {
@@ -180,20 +181,25 @@ export const DesignSystem: FC = () => {
         <Table />
       </Box>
 
-      <h4>Accordion</h4>
-      <ContentList
-        contentList={accordionContent}
-        renderContent={(accordionItem) => (
-          <Accrodion
-            key={accordionItem.id}
-            title={accordionItem.title}
-            body={accordionItem.body}
-          />
-        )}
-      />
+      <h4>Uncontrolled Accordion</h4>
+      <Box mb={4}>
+        <ContentList
+          contentList={accordionContent}
+          renderContent={(accordionItem) => (
+            <Accrodion
+              key={accordionItem.id}
+              title={accordionItem.title}
+              body={accordionItem.body}
+            />
+          )}
+        />
+      </Box>
+
+      <h4>Controlled Accordion</h4>
+      <ControlledAccordion />
 
       <h4>Tabs</h4>
-      <h4>Horizontal Tab #1</h4>
+      <h5>Horizontal Tab #1</h5>
       <Tabs
         tabItems={tabs}
         content={[<TabsContent1 />, <TabsContent2 />, <TabsContent3 />]}
@@ -215,7 +221,7 @@ export const DesignSystem: FC = () => {
           },
         }}
       />
-      <h4>Horizontal Tab #2</h4>
+      <h5>Horizontal Tab #2</h5>
       <Tabs
         tabItems={tabs}
         content={[<TabsContent1 />, <TabsContent2 />, <TabsContent3 />]}
@@ -223,7 +229,7 @@ export const DesignSystem: FC = () => {
           marginRight: "1.88em",
         }}
       />
-      <h4>Vertical Tab</h4>
+      <h5>Vertical Tab</h5>
       <Tabs
         tabItems={tabs}
         orientation="vertical"

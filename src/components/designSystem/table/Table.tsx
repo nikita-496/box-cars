@@ -1,4 +1,3 @@
-import { TableCell } from "@/components/base/elements";
 import { createUuid } from "@/core/utils/createUuid";
 import {
   Table as MUITable,
@@ -7,6 +6,8 @@ import {
   TableRow,
 } from "@mui/material";
 import { FC } from "react";
+
+import { TableCell } from "@/components/base/elements";
 
 export type TableProps = {
   alignFirstCell?: "center" | "left" | "right" | "justify" | "inherit";
