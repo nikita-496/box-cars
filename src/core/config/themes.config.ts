@@ -27,18 +27,20 @@ declare module "@mui/material/styles" {
 
   //eslint-disable-next-line
   interface Palette {
-    neutralLight: PaletteColor;
-    neutralDark: PaletteColor;
+    contrastLight: PaletteColor;
+    contrastDark: PaletteColor;
     common: Palette["common"];
+    primary: Palette["primary"];
     blueLight: PaletteColor;
     blueDark: PaletteColor;
     grey: Color;
   }
   //eslint-disable-next-line
   interface PaletteOptions {
-    neutralLight: PaletteColor;
-    neutralDark: PaletteColor;
+    contrastLight: PaletteColor;
+    contrastDark: PaletteColor;
     common?: PaletteOptions["common"];
+    primary?: PaletteOptions["primary"];
     blueLight: PaletteColor;
     blueDark: PaletteColor;
     grey?: Partial<Color>;
@@ -62,8 +64,9 @@ declare module "@mui/material/Button" {
   //eslint-disable-next-line
   interface ButtonPropsColorOverrides {
     common: true;
-    neutralLight: true;
-    neutralDark: true;
+    primary: true;
+    contrastLight: true;
+    contrastDark: true;
     blueLight: true;
     blueDark: true;
     grey: true;
@@ -106,6 +109,15 @@ theme = createTheme(theme, {
       black: color.neutral[900],
       white: color.neutral[50],
     },
+    primary: {
+      light: color.blue[400],
+      main: color.blue[500],
+      dark: color.blue[400],
+      contrastText:
+        getContrastRatio(color.blue[500], "#fff") > 4.5
+          ? theme.palette.common.white
+          : theme.palette.common.black,
+    },
     blueLight: {
       light: color.blue[400],
       main: color.blue[500],
@@ -134,18 +146,18 @@ theme = createTheme(theme, {
       700: color.grey[700],
       900: color.grey[900],
     },
-    neutralLight: theme.palette.augmentColor({
-      color: {
-        main: theme.palette.common.black,
-        dark: theme.palette.common.black,
-        contrastText: theme.palette.common.white,
-      },
-    }),
-    neutralDark: theme.palette.augmentColor({
+    contrastLight: theme.palette.augmentColor({
       color: {
         main: theme.palette.common.white,
-        dark: theme.palette.common.white,
+        dark: theme.palette.common.black,
         contrastText: theme.palette.common.black,
+      },
+    }),
+    contrastDark: theme.palette.augmentColor({
+      color: {
+        main: theme.palette.common.black,
+        dark: theme.palette.common.white,
+        contrastText: theme.palette.common.white,
       },
     }),
   },

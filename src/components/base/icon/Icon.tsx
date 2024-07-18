@@ -1,15 +1,15 @@
 import { SvgIconProps } from "@mui/material";
 import { createElement, FC } from "react";
 
-import { icons } from "@/components/designSystem/icon/icons";
+import { icons } from "@/components/base/icon/icons";
 
 type IconName = keyof typeof icons;
 
-type ThemeIconProps = {
+export type IconProps = {
   icon: IconName;
 } & SvgIconProps;
 
-export const ThemeIcon: FC<ThemeIconProps> = ({
+export const Icon: FC<IconProps> = ({
   icon,
   fill = "#050B20",
   stroke = "white",
