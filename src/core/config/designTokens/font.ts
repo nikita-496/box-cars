@@ -1,14 +1,15 @@
 export const font = {
-  "font-family": {
+  family: {
     "sans-serif":
       'system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
     monospace:
       'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
-    "dm-sans": 'DM Sans", sans-serif',
+    "dm-sans": '"DM Sans", sans-serif',
     "bebas-neue": '"Bebas Neue", sans-serif',
   },
   size: {
-    "x0.875": "x0.875rem",
+    "x.08125": "0.8125rem",
+    "x0.875": "0.875rem",
     "x0.9375": "0.9375rem",
     base: "1rem",
     "x1.125": "1.125rem",
