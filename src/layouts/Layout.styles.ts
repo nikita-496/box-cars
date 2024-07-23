@@ -2,10 +2,11 @@ import { Box, styled } from "@mui/material";
 
 type MainProps = { open?: boolean };
 
-export const LayoutBox = styled(Box)(() => ({
+export const LayoutBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   minHeight: "100vh",
+  backgroundColor: theme.palette.common.black,
 }));
 export const Main = styled("main")<MainProps>(({ theme, open }) => ({
   flex: "1 0 auto",

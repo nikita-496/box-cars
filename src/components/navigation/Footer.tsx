@@ -1,14 +1,23 @@
 import { FC } from "react";
 
-import { NavLink } from "@/components/base/navLink";
+import { FooterBottom } from "@/components/navigation/FooterBottom";
+import { FooterMiddle } from "@/components/navigation/FooterMiddle";
+import { FooterTop } from "@/components/navigation/FooterTop";
+import {
+  FooterDivider,
+  StyledContainer,
+} from "@/components/navigation/footer.styles";
 
 export const Footer: FC = () => {
   return (
     <footer>
-      <span>
-        &#169;
-        <NavLink to="/">2024 Boxcars.com. All rights reserved.</NavLink>
-      </span>
+      <StyledContainer>
+        <FooterTop />
+        <FooterDivider />
+        <FooterMiddle />
+        <FooterDivider />
+        <FooterBottom />
+      </StyledContainer>
     </footer>
   );
 };

@@ -22,8 +22,8 @@ declare module "@mui/material/styles" {
     "body_x1.125": React.CSSProperties;
     "body_x1.125_m": React.CSSProperties;
     "body_x1.25": React.CSSProperties;
-    "h_x2.5": React.CSSProperties;
     "h_x1.875": React.CSSProperties;
+    "h_x2.5": React.CSSProperties;
   }
   //eslint-disable-next-line
   interface TypographyVariantsOptions {
@@ -36,8 +36,8 @@ declare module "@mui/material/styles" {
     "body_x1.125": React.CSSProperties;
     "body_x1.125_m": React.CSSProperties;
     "body_x1.25": React.CSSProperties;
-    "h_x2.5": React.CSSProperties;
     "h_x1.875": React.CSSProperties;
+    "h_x2.5": React.CSSProperties;
   }
 
   //eslint-disable-next-line
@@ -128,6 +128,9 @@ theme = createTheme(theme, {
     },
     "body_x1.25": {
       fontSize: font.size["x1.25"],
+    },
+    "h_x1.875": {
+      fontSize: font.size["x1.875"],
     },
     "h_x2.5": {
       fontSize: font.size["x2.5"],
