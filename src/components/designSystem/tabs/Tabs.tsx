@@ -10,7 +10,7 @@ type Tab = {
   name: string;
 };
 
-type TabsProps = {
+export type TabsProps = {
   tabItems: Tab[];
   content: React.ReactNode[];
   variant?: "scrollable" | "standard" | "fullWidth";

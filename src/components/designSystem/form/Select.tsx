@@ -1,15 +1,27 @@
-import { SelectChangeEvent, SelectProps as MUISelect } from "@mui/material";
-import { lighten } from "@mui/system";
+import { SelectChangeEvent } from "@mui/material";
 import { FC, useState } from "react";
 
 import { MenuItem } from "@/components/base/elements";
-import { Select as BaseSelect } from "@/components/base/form";
+import {
+  Select as BaseSelect,
+  SelectProps as BaseSelectProps,
+} from "@/components/base/form";
 import { InputLabel, Typography } from "@/components/base/typography";
 
-type SelectProps = MUISelect;
+export type SelectProps = {
+  inputLabel?: string;
+  menuItems: string[];
+  defaultValue?: string;
+} & BaseSelectProps<unknown>;
 
-export const Select: FC<SelectProps> = ({ label = "label", ...rest }) => {
-  const [age, setAge] = useState("menu");
+export const Select: FC<SelectProps> = ({
+  inputLabel,
+  label = "label",
+  menuItems,
+  defaultValue = "default",
+  ...rest
+}) => {
+  const [menuValue, setMenuValue] = useState(defaultValue);
 
   const handleChange = (event: SelectChangeEvent<unknown>) => {
     /* TODO: More meaningful types are needed
@@ -20,42 +32,33 @@ export const Select: FC<SelectProps> = ({ label = "label", ...rest }) => {
       https://stackoverflow.com/questions/58675993/typescript-react-select-onchange-handler-type-error
     */
     const value = event.target.value as string;
-    setAge(value);
+    setMenuValue(value);
   };
   return (
     <>
-      <InputLabel>Select Box</InputLabel>
+      {inputLabel && <InputLabel>Select Box</InputLabel>}
+
       <BaseSelect<unknown>
-        value={age}
+        value={menuValue}
         onChange={handleChange}
         label={label}
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        defaultValue="menu"
+        defaultValue={defaultValue}
         {...rest}
       >
-        <MenuItem value="menu">
-          <Typography
-            variant="body_x0.9375_sm"
-            lineHeight="inherit"
-            sx={(theme) => ({
-              color: lighten(theme.palette.common.black, 0.1),
-            })}
-          >
-            Menu Item 1
+        <MenuItem value={defaultValue} sx={{ display: "none" }}>
+          <Typography variant="body_x0.9375_sm" lineHeight="inherit">
+            {defaultValue}
           </Typography>
         </MenuItem>
-        <MenuItem value="menu2">
-          <Typography
-            variant="body_x0.9375_sm"
-            lineHeight="inherit"
-            sx={(theme) => ({
-              color: lighten(theme.palette.common.black, 0.1),
-            })}
-          >
-            Menu Item 2
-          </Typography>
-        </MenuItem>
+        {menuItems.map((menuItem) => (
+          <MenuItem value={menuItem} key={menuItem}>
+            <Typography variant="body_x0.9375_sm" lineHeight="inherit">
+              {menuItem}
+            </Typography>
+          </MenuItem>
+        ))}
       </BaseSelect>
     </>
   );

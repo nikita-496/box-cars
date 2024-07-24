@@ -343,7 +343,7 @@ export const DesignSystem: FC = () => {
           <Checkmarks />
         </FormControl>
         <FormControl fullWidth>
-          <Select />
+          <Select menuItems={["Menu item 1", "Menu item 2", "Menu item 3"]} />
         </FormControl>
       </Stack>
       <h3>Design System</h3>

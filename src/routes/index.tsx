@@ -9,12 +9,12 @@ import { teamRoutes } from "@/routes/team.routes";
 import { termsRoutes } from "@/routes/terms.routes";
 import { createBrowserRouter } from "react-router-dom";
 
-import { Home } from "@/pages/Home";
 import { NotFound } from "@/pages/NotFound";
 import { About } from "@/pages/about/About";
 import { ContactUs } from "@/pages/contactUs/ContactUs";
 import { DesignSystem } from "@/pages/designSystem/DesignSystem";
 import { Faq } from "@/pages/faq/Faq";
+import { Home } from "@/pages/home/Home";
 import { Pricing } from "@/pages/pricing/Pricing";
 
 const { inventories, inventoryDetail } = inventoriesRoutes;

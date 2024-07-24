@@ -7,16 +7,23 @@ import {
   Box,
   Grid,
   AppBarProps as MUIAppBarProps,
+  useTheme,
 } from "@mui/material";
 
-import { NavLink as BaseNavLink } from "@/components/base/navLink";
+import {
+  NavLink as BaseNavLink,
+  NavLinkProps,
+} from "@/components/base/navLink";
 import { Typography as BaseTypography } from "@/components/base/typography";
 
 type AppBarProps = { open?: boolean } & MUIAppBarProps;
 
 export const AppBar = styled(MUIAppBar)<AppBarProps>(({ theme, open }) => ({
   backgroundColor: "transparent",
-  padding: "1.75em 0 0",
+  padding: "2.75em 0 0",
+  [theme.breakpoints.up("lg")]: {
+    padding: "1.75em 0 0",
+  },
   transition: theme.transitions.create("transform", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -46,7 +53,7 @@ export const GridContainer = styled(Grid)(() => ({
   maxWidth: "1829px",
   width: "100%",
   margin: "0 auto",
-  padding: "0 1.88em",
+  padding: "0 0.9375em",
 }));
 
 export const FlexGrid = styled(Grid)(({ theme }) => ({
@@ -64,6 +71,7 @@ export const List = styled(MUIList)(({ theme }) => ({
   padding: 0,
   display: "none",
   margin: "0 1.94em",
+
   [theme.breakpoints.up("lg")]: {
     display: "flex",
   },
@@ -72,15 +80,22 @@ export const List = styled(MUIList)(({ theme }) => ({
 export const ListItem = styled(MUIListItem)(() => ({
   padding: 0,
   margin: "0 1.125em",
+  "&:last-child": {
+    marginRight: 0,
+  },
   display: "block",
 }));
 
-export const NavLink = styled(BaseNavLink)(({ theme }) => ({
-  color: theme.palette.common.white,
+const NavLinkStyled = styled(BaseNavLink)(() => ({
   "&:hover": {
     color: "inherit",
   },
 }));
+
+export const NavLink = (props: NavLinkProps) => {
+  const theme = useTheme();
+  return <NavLinkStyled color={theme.palette.common.white} {...props} />;
+};
 
 export const Typography = styled(BaseTypography)(({ theme }) => ({
   fontWeight: theme.typography.fontWeightRegular,
