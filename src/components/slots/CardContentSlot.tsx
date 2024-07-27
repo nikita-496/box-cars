@@ -91,7 +91,7 @@ export const CardContentSlot: FC = () => {
             $399
           </Typography>
 
-          <NavLink to="/" style={{ fontSize: "0.9375em" }}>
+          <NavLink to="/" style={{ fontSize: "0.9375rem" }}>
             View Details
             <Icon
               icon="ArrowOutward"
