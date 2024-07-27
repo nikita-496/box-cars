@@ -3,20 +3,39 @@ import { BoxProps } from "@mui/system";
 import { FC } from "react";
 
 enum MarginType {
-  SMALL = "12px",
-  MEDIUM = "24px",
-  LARGE = "56px",
-  EXTRA_LARGE = "96px",
+  SMALL = "0.75em",
+  MEDIUM = "1.5em",
+  LARGE = "3.5em",
+  EXTRA_LARGE = "6em",
 }
 
 export type MarginProps = {
-  mt: MarginType;
-  mb: MarginType;
+  mt?: MarginType;
+  mb?: MarginType;
+  mr?: MarginType;
+  ml?: MarginType;
 } & BoxProps;
 
-export const Margin: FC<MarginProps> = ({ mb, mt, children, sx, ...rest }) => {
+export const Margin: FC<MarginProps> = ({
+  mb = MarginType.SMALL,
+  mt = MarginType.SMALL,
+  mr,
+  ml,
+  children,
+  sx,
+  ...rest
+}) => {
   return (
-    <Box sx={{ marginTop: mt, marginBottom: mb, ...sx }} {...rest}>
+    <Box
+      sx={{
+        marginTop: mt,
+        marginBottom: mb,
+        marginRight: mr,
+        marginLeft: ml,
+        ...sx,
+      }}
+      {...rest}
+    >
       {children}
     </Box>
   );
