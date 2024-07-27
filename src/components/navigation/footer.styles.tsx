@@ -10,6 +10,10 @@ export const FooterDivider = styled(Divider)(({ theme }) => ({
   backgroundColor: lighten(theme.palette.common.black, 0.2),
 }));
 
+export const FooterStyled = styled("footer")(({ theme }) => ({
+  background: theme.palette.common.black,
+}));
+
 export const StyledContainer = styled(Container)(({ theme }) => ({
   width: "100%",
   padding: "0 0.9375em",

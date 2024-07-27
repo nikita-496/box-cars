@@ -5,12 +5,13 @@ import { FooterMiddle } from "@/components/navigation/FooterMiddle";
 import { FooterTop } from "@/components/navigation/FooterTop";
 import {
   FooterDivider,
+  FooterStyled,
   StyledContainer,
 } from "@/components/navigation/footer.styles";
 
 export const Footer: FC = () => {
   return (
-    <footer>
+    <FooterStyled>
       <StyledContainer>
         <FooterTop />
         <FooterDivider />
@@ -18,6 +19,6 @@ export const Footer: FC = () => {
         <FooterDivider />
         <FooterBottom />
       </StyledContainer>
-    </footer>
+    </FooterStyled>
   );
 };

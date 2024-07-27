@@ -35,7 +35,7 @@ export const Header: FC<HeaderProps> = ({
   const handleDrawerOpen = () => setOpenSideMenu(true);
 
   return (
-    <AppBar elevation={0} open={openSideMenu} position="fixed">
+    <AppBar elevation={0} open={openSideMenu} position="absolute">
       <Toolbar>
         <GridContainer container>
           <Grid item xxs={1}>
