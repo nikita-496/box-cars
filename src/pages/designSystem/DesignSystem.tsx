@@ -225,9 +225,6 @@ export const DesignSystem: FC = () => {
       <Tabs
         tabItems={tabs}
         content={[<TabsContent1 />, <TabsContent2 />, <TabsContent3 />]}
-        styleTab={{
-          marginRight: "1.88em",
-        }}
       />
       <h5>Vertical Tab</h5>
       <Tabs
