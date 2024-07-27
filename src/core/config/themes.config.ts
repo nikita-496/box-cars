@@ -23,6 +23,7 @@ declare module "@mui/material/styles" {
     "body_x1.125_m": React.CSSProperties;
     "body_x1.25": React.CSSProperties;
     "h_x1.875": React.CSSProperties;
+    "h_x2.375": React.CSSProperties;
     "h_x2.5": React.CSSProperties;
     "h_x4.375": React.CSSProperties;
   }
@@ -38,6 +39,7 @@ declare module "@mui/material/styles" {
     "body_x1.125_m": React.CSSProperties;
     "body_x1.25": React.CSSProperties;
     "h_x1.875": React.CSSProperties;
+    "h_x2.375": React.CSSProperties;
     "h_x2.5": React.CSSProperties;
     "h_x4.375": React.CSSProperties;
   }
@@ -76,6 +78,7 @@ declare module "@mui/material/Typography" {
     "body_x1.125": true;
     "body_x1.125_m": true;
     "body_x1.25": true;
+    "h_x2.375": true;
     "h_x2.5": true;
     "h_x1.875": true;
     "h_x4.375": true;
@@ -134,6 +137,9 @@ theme = createTheme(theme, {
     },
     "h_x1.875": {
       fontSize: font.size["x1.875"],
+    },
+    "h_x2.375": {
+      fontSize: font.size["x2.375"],
     },
     "h_x2.5": {
       fontSize: font.size["x2.5"],
