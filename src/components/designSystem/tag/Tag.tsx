@@ -3,9 +3,9 @@ import { FC } from "react";
 
 import { Typography } from "@/components/base/typography";
 
-type TagProps = {
+export type TagProps = {
   name: string;
-  sx: SxProps;
+  sx?: SxProps;
 };
 
 export const Tag: FC<TagProps> = ({ name, sx }) => {

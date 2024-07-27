@@ -1,11 +1,10 @@
+import { StyleOperator } from "@/core/types/components/styleOperator.type";
 import { CardMedia, SxProps } from "@mui/material";
 import React, { FC } from "react";
 
-type StyleOperator = "px" | "rem" | "em" | "vw" | "vh" | "%";
-
-type ZoomInCardMediaProps = {
+export type ZoomInCardMediaProps = {
   media?: string;
-  width?: number;
+  width?: number | "auto";
   height?: number | "auto";
   widthOperator?: StyleOperator;
   heightOperator?: StyleOperator;
@@ -18,7 +17,7 @@ export const ZoomInCardMedia: FC<ZoomInCardMediaProps> = ({
   width = 100,
   height = "auto",
   widthOperator = "%",
-  heightOperator = "px",
+  heightOperator = "em",
   styleRoot,
   sx,
 }) => {
@@ -39,6 +38,7 @@ export const ZoomInCardMedia: FC<ZoomInCardMediaProps> = ({
           p: 0,
           m: 0,
           transition: "all 0.3s ease",
+          height: "100%",
           "&:hover": { transform: "scale(1.1)" },
           ...sx,
         }}

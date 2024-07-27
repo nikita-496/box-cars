@@ -7,6 +7,7 @@ export { Textarea } from "@/components/base/form/Textarea";
 export { TextField } from "@/components/base/form/TextField";
 export type { CheckboxProps } from "@/components/base/form/Checkbox";
 export type { RadioProps } from "@/components/base/form/Radio";
+export type { SelectProps } from "@/components/base/form/Select";
 export type { SliderProps } from "@/components/base/form/Slider";
 export type { SwitchProps } from "@/components/base/form/Switch";
 export type { TextFieldProps } from "@/components/base/form/TextField";

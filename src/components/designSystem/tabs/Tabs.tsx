@@ -10,7 +10,7 @@ type Tab = {
   name: string;
 };
 
-type TabsProps = {
+export type TabsProps = {
   tabItems: Tab[];
   content: React.ReactNode[];
   variant?: "scrollable" | "standard" | "fullWidth";
@@ -26,8 +26,8 @@ export const Tabs: FC<TabsProps> = ({
   tabItems,
   variant = "standard",
   orientation = "horizontal",
-  styleTabs = { borderBottom: 1, borderColor: "divider" },
-  styleTab = {},
+  styleTabs,
+  styleTab,
   styleContent = { p: 3 },
   sx = { width: "100%" },
 }) => {
@@ -36,17 +36,23 @@ export const Tabs: FC<TabsProps> = ({
     setActiveTab(newValue);
     return event;
   };
+  const defaultStyleTab = { marginRight: "1.88em" };
+  const defaultStyleTabs = { borderBottom: 1, borderColor: "divider" };
   return (
     <Box sx={sx}>
       <TabBar
         value={activeTab}
         onChange={handleChange}
         orientation={orientation}
-        sx={styleTabs}
+        sx={{ ...defaultStyleTabs, ...styleTabs }}
         variant={variant}
       >
         {tabItems.map((tab) => (
-          <Tab key={tab.id} label={tab.name} sx={styleTab} />
+          <Tab
+            key={tab.id}
+            label={tab.name}
+            sx={{ ...defaultStyleTab, ...styleTab }}
+          />
         ))}
       </TabBar>
 

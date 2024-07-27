@@ -1,23 +1,71 @@
-import { FC } from "react";
+import { HeaderLink } from "@/core/types/components/header.type";
+import { Grid, useMediaQuery } from "@mui/material";
+import { FC, ReactNode } from "react";
 
-import { NavLink } from "@/components/base/navLink";
+import { Icon } from "@/components/base/icon";
+import { NavLink as BaseNavLink } from "@/components/base/navLink";
+import { Hamburger } from "@/components/designSystem/navigation/Hamburger";
+import {
+  AppBar,
+  BoxIcon,
+  FlexGrid,
+  GridContainer,
+  List,
+  ListItem,
+  NavLink,
+  Toolbar,
+  Typography,
+} from "@/components/navigation/header.styles";
 
-export const Header: FC = () => {
+export type HeaderProps = {
+  logo: ReactNode;
+  navLinks: HeaderLink[];
+  openSideMenu: boolean;
+  setOpenSideMenu: (open: boolean) => void;
+};
+
+export const Header: FC<HeaderProps> = ({
+  logo,
+  navLinks,
+  openSideMenu,
+  setOpenSideMenu,
+}) => {
+  const matches = useMediaQuery("(min-width:416px)");
+
+  const handleDrawerOpen = () => setOpenSideMenu(true);
+
   return (
-    <header>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/inventories">Inventories</NavLink>
-        <NavLink to="/blogs">Blogs</NavLink>
-        <NavLink to="/shop">Shop</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact Us</NavLink>
-        <NavLink to="/team">Team</NavLink>
-        <NavLink to="/terms">Terms</NavLink>
-        <NavLink to="/dealer">Dealer</NavLink>
-        <NavLink to="/login">Login</NavLink>
-        <NavLink to="/profile">Profile</NavLink>
-      </nav>
-    </header>
+    <AppBar elevation={0} open={openSideMenu} position="absolute">
+      <Toolbar>
+        <GridContainer container>
+          <Grid item xxs={1}>
+            <BaseNavLink to="/">{logo}</BaseNavLink>
+          </Grid>
+          <FlexGrid item xxs={11}>
+            <List>
+              {navLinks.map((link) => (
+                <ListItem key={link.url}>
+                  <NavLink to={link.url}>
+                    <Typography variant="body_x0.9375_m">
+                      {link.label}
+                    </Typography>
+                  </NavLink>
+                </ListItem>
+              ))}
+            </List>
+
+            {matches && (
+              <NavLink to="/login">
+                <BoxIcon>
+                  <Icon icon="PersonOutline" fontSize="inherit" fill="#ffff" />
+                </BoxIcon>
+                <Typography variant="body_x0.9375_m">Sign in</Typography>
+              </NavLink>
+            )}
+            <Hamburger handleDrawerOpen={handleDrawerOpen} />
+          </FlexGrid>
+        </GridContainer>
+      </Toolbar>
+    </AppBar>
   );
 };

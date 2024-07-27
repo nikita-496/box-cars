@@ -225,9 +225,6 @@ export const DesignSystem: FC = () => {
       <Tabs
         tabItems={tabs}
         content={[<TabsContent1 />, <TabsContent2 />, <TabsContent3 />]}
-        styleTab={{
-          marginRight: "1.88em",
-        }}
       />
       <h5>Vertical Tab</h5>
       <Tabs
@@ -343,7 +340,7 @@ export const DesignSystem: FC = () => {
           <Checkmarks />
         </FormControl>
         <FormControl fullWidth>
-          <Select />
+          <Select menuItems={["Menu item 1", "Menu item 2", "Menu item 3"]} />
         </FormControl>
       </Stack>
       <h3>Design System</h3>
