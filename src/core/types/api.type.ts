@@ -7,7 +7,19 @@ export namespace API {
     export type Function<
       TModel extends object,
       TResponse extends API.Response<TModel>,
-    > = (request: API.Options<TModel>) => Promise<AxiosResponse<TResponse>>;
+    > = (request: API.Options) => Promise<AxiosResponse<TResponse>>;
+    export type GetFunction<
+      TModel extends object,
+      TResponse extends API.Response<TModel>,
+    > = (request?: API.GetOptions) => Promise<AxiosResponse<TResponse>>;
+    export type PostFunction<
+      TModel extends object,
+      TResponse extends API.Response<TModel>,
+    > = (request: API.PostOptions<TModel>) => Promise<AxiosResponse<TResponse>>;
+    export type PutFunction<
+      TModel extends object,
+      TResponse extends API.Response<TModel>,
+    > = (request: API.PutOptions<TModel>) => Promise<AxiosResponse<TResponse>>;
   }
   // eslint-disable-next-line @typescript-eslint/no-namespace
   export namespace Auth {
@@ -29,9 +41,14 @@ export namespace API {
     status: number;
     data: TModel[];
   };
-  export type Options<TModel> = {
+  export type Options = {
     id: global.Id;
-    params: object;
-    payload: TModel | undefined;
   };
+  export type GetOptions = {
+    params: object;
+  };
+  export type PostOptions<TModel> = {
+    payload: TModel;
+  };
+  export type PutOptions<TModel> = PostOptions<TModel> & Options;
 }

@@ -1,6 +1,6 @@
 import { baseCarApiClient } from "@/api/clients";
 import { MakeM } from "@/core/models/make.model";
-import { Service } from "@/core/services";
+import { Service } from "@/core/services/service";
 import { API } from "@/core/types/api.type";
 
 export class MakeService extends Service<MakeM, API.Response<MakeM>> {
