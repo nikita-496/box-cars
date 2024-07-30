@@ -4,10 +4,10 @@ import { FC } from "react";
 import { NavLink } from "@/components/base/navLink";
 import { SearchForm } from "@/components/forms";
 import { AllVehiclesSection } from "@/components/sections/allVehicles/AllVehiclesSection";
-import { BrandSection } from "@/components/sections/barnd/BrandSection";
 import { Blog } from "@/components/sections/blog/Blog";
 import { FactSection } from "@/components/sections/fact/FactSection";
 import { PopularSection } from "@/components/sections/popular/PopularSection";
+import { PremiumBrands } from "@/components/sections/premiumBrands/PremiumBrands";
 import { PricingSection } from "@/components/sections/pricing/PricingSection";
 import { Shop } from "@/components/sections/shop/Shop";
 import { Testimonial } from "@/components/sections/testimonial/Testimonial";
@@ -90,7 +90,7 @@ export const Home: FC = () => {
           </ContentGrid>
         </HeroContainer>
       </Hero>
-      <BrandSection />
+      <PremiumBrands />
       <AllVehiclesSection />
       <PricingSection />
       <FactSection />
