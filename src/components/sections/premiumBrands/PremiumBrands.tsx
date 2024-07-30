@@ -1,6 +1,10 @@
 import { useAppDispatch } from "@/core/hooks/useAppDispatch";
-import { fetchMakes, selectPremiumBrands } from "@/core/store/makes/makesSlice";
-import { Grid } from "@mui/material";
+import {
+  fetchMakes,
+  selectPremiumBrands,
+  selectPremiumBrandsStatus,
+} from "@/core/store/makes/makesSlice";
+import { Grid, Skeleton } from "@mui/material";
 import { FC, useEffect } from "react";
 import { useSelector } from "react-redux";
 
@@ -20,6 +24,7 @@ import {
 export const PremiumBrands: FC = () => {
   const dispatch = useAppDispatch();
   const premiumBrands = useSelector(selectPremiumBrands);
+  const premiumBrandsStatus = useSelector(selectPremiumBrandsStatus);
 
   useEffect(() => {
     dispatch(fetchMakes());
@@ -35,14 +40,18 @@ export const PremiumBrands: FC = () => {
         <Grid container spacing={3} justifyContent="center">
           {premiumBrands.map((brand) => (
             <Grid key={brand.id} item sm={6} md={2}>
-              <NavLink to="#">
-                <CardBrand
-                  cardMediaSlot={
-                    <ZoomInCardMedia media={brand.image} width="auto" />
-                  }
-                  cardContentSlot={<HeadingBrand>{brand.name}</HeadingBrand>}
-                />
-              </NavLink>
+              {premiumBrandsStatus === "pending" ? (
+                <Skeleton variant="rounded" width={226} height={180} />
+              ) : (
+                <NavLink to="#">
+                  <CardBrand
+                    cardMediaSlot={
+                      <ZoomInCardMedia media={brand.image} width="auto" />
+                    }
+                    cardContentSlot={<HeadingBrand>{brand.name}</HeadingBrand>}
+                  />
+                </NavLink>
+              )}
             </Grid>
           ))}
         </Grid>

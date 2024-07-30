@@ -1,5 +1,9 @@
 import { MakeM } from "@/core/models/make.model";
-import { AsyncThunkConfig, RootState } from "@/core/types/store.type";
+import {
+  AsyncThunkConfig,
+  InitialState,
+  RootState,
+} from "@/core/types/store.type";
 import {
   createAsyncThunk,
   createEntityAdapter,
@@ -14,6 +18,8 @@ const makesAdapter = createEntityAdapter({
   sortComparer: (a, b) => Number(a.id) - Number(b.id),
 });
 
+const initialState: InitialState = { status: "idle", error: "" };
+
 export const fetchMakes = createAsyncThunk<
   MakeM[],
   undefined,
@@ -26,14 +32,26 @@ export const fetchMakes = createAsyncThunk<
 
 const makesSlice = createSlice({
   name: "makes",
-  initialState: makesAdapter.getInitialState({ status: "idle", error: null }),
+  initialState: makesAdapter.getInitialState(initialState),
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchMakes.fulfilled, makesAdapter.setAll);
+    builder
+      .addCase(fetchMakes.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(fetchMakes.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        makesAdapter.upsertMany(state, action.payload);
+      })
+      .addCase(fetchMakes.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
   },
 });
 
 export default makesSlice.reducer;
+
 export const { selectAll: selectAllMakes, selectById: selectOneMakes } =
   makesAdapter.getSelectors<RootState>((state) => state.makes);
 
@@ -46,4 +64,9 @@ export const selectPremiumBrands = createSelector([selectAllMakes], (makes) =>
     ...make,
     image: `https://raw.githubusercontent.com/nikita-496/box-cars/redux/src/assets/brands/${make.name}.png`,
   })),
+);
+
+export const selectPremiumBrandsStatus = createSelector(
+  (state: RootState) => state.makes,
+  (makes) => makes.status,
 );
