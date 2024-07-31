@@ -26,8 +26,8 @@ export const fetchMakes = createAsyncThunk<
   AsyncThunkConfig
 >(FETCH_MAKES, async (_, { extra }) => {
   const { make } = extra;
-  const responseMakes = await make.get();
-  return responseMakes.data.data;
+  const response = await make.get();
+  return response.data.data;
 });
 
 const makesSlice = createSlice({
