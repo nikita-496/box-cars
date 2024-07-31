@@ -1,5 +1,15 @@
+import { useAppDispatch } from "@/core/hooks/useAppDispatch";
+import { ModelM } from "@/core/models/model.model";
+import {
+  fetchOneEngine,
+  selectAllEngines,
+} from "@/core/store/engines/enginesSlice";
+import { selectOneMakes } from "@/core/store/makes/makesSlice";
+import { fetchOneTrim, selectAllTrims } from "@/core/store/trims/trimsSlice";
+import { RootState } from "@/core/types/store.type";
 import { Box, useTheme } from "@mui/material";
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { Icon } from "@/components/base/icon";
 import { ArrowOutwardLink } from "@/components/navigation/ArrowOutwardLink";
@@ -16,14 +26,40 @@ import {
   CardContent,
 } from "@/components/slots/cardContentSlot.styles";
 
-export const VehicleCardContentSlot: FC = () => {
+type VehicleCardContentSlotProps = {
+  model: ModelM;
+};
+
+export const VehicleCardContentSlot: FC<VehicleCardContentSlotProps> = ({
+  model,
+}) => {
   const theme = useTheme();
+  const make = useSelector((state: RootState) =>
+    selectOneMakes(state, model.make_id),
+  );
+
+  const engine = useSelector(selectAllEngines)[0];
+  const trim = useSelector((state: RootState) => selectAllTrims(state))[0];
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchOneTrim(model.id));
+    dispatch(
+      fetchOneEngine({ makeModelId: model.id, makeModelTrimId: trim?.id }),
+    );
+  }, [dispatch, model.id, trim?.id]);
+
   return (
     <CardContent>
       <CardContentHeading>
-        <NavLinkStyled to="#">Mercedes-Benz, C Class</NavLinkStyled>
+        <NavLinkStyled to="#">
+          {make?.name}, {model.name}
+        </NavLinkStyled>
       </CardContentHeading>
-      <CardContentText>2023 C300e AMG Line Night Ed Premiu...</CardContentText>
+      <CardContentText>
+        {trim?.year} {trim?.name}
+      </CardContentText>
       <CardContentDevider />
       <CardContentList>
         <CardContentListItemColumn>
@@ -32,7 +68,7 @@ export const VehicleCardContentSlot: FC = () => {
         </CardContentListItemColumn>
         <CardContentListItemColumn>
           <Icon icon="GasolinePump" size={0.875} />
-          <CardContentSmallText>Petrol</CardContentSmallText>
+          <CardContentSmallText>{engine?.engine_type}</CardContentSmallText>
         </CardContentListItemColumn>
         <CardContentListItemColumn>
           <Icon icon="GasolinePump" size={0.875} />
@@ -41,9 +77,9 @@ export const VehicleCardContentSlot: FC = () => {
       </CardContentList>
       <CardContentDevider />
       <Box>
-        <CardContentSmallText>$789</CardContentSmallText>
+        <CardContentSmallText>${trim?.msrp}</CardContentSmallText>
         <CardContentBottom>
-          <CardContentBottomSmall> $399</CardContentBottomSmall>
+          <CardContentBottomSmall> ${trim?.invoice}</CardContentBottomSmall>
           <ArrowOutwardLink
             label="View Details"
             url="#"

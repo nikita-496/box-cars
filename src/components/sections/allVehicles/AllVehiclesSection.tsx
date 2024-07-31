@@ -1,7 +1,11 @@
+import { useAppDispatch } from "@/core/hooks/useAppDispatch";
+import { fetchModels } from "@/core/store/models/modelsSlice";
 import { createUuid } from "@/core/utils/createUuid";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
-import { VehicleCard } from "@/components/cards/VehicleCard";
+import { VehicleInStock } from "@/components/cards/VehicleInStock";
+import { VehicleNewCarsCard } from "@/components/cards/VehicleNewCarsCard";
+import { VehicleUsedCarsCard } from "@/components/cards/VehicleUsedCarsCard";
 import { ArrowOutwardLink } from "@/components/navigation/ArrowOutwardLink";
 import { TabsStyled } from "@/components/sections/allVehicles/allVehiclesSection.styles";
 import {
@@ -26,6 +30,12 @@ const tabs = [
 ];
 
 export const AllVehiclesSection: FC = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchModels());
+  }, [dispatch]);
+
   return (
     <section>
       <SectionContainer>
@@ -35,7 +45,11 @@ export const AllVehiclesSection: FC = () => {
         </Top>
         <TabsStyled
           tabItems={tabs}
-          content={[<VehicleCard />, <VehicleCard />, <VehicleCard />]}
+          content={[
+            <VehicleNewCarsCard />,
+            <VehicleUsedCarsCard />,
+            <VehicleInStock />,
+          ]}
         />
       </SectionContainer>
     </section>
