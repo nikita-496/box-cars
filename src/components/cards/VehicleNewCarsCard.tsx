@@ -1,7 +1,6 @@
-import { selectAllModels } from "@/core/store/models/modelsSlice";
-import { RootState } from "@/core/types/store.type";
+import { useAppSelector } from "@/core/hooks/useAppSelector";
+import { selectAllModels } from "@/core/modules/models";
 import { FC } from "react";
-import { useSelector } from "react-redux";
 
 import VehicleCardImage from "@/assets/car-1.jpg";
 import { ZoomInCardMedia } from "@/components/base/elements/ZoomInCardMedia";
@@ -11,7 +10,7 @@ import { VehicleCardContentSlot } from "@/components/slots/VehicleCardContentSlo
 import { VehicleCardToolbarSlot } from "@/components/slots/VehicleCardToolbarSlot";
 
 export const VehicleNewCarsCard: FC = () => {
-  const models = useSelector((state: RootState) => selectAllModels(state));
+  const models = useAppSelector(selectAllModels);
 
   return (
     <CardWrapper>

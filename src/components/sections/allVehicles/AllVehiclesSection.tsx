@@ -1,5 +1,5 @@
 import { useAppDispatch } from "@/core/hooks/useAppDispatch";
-import { fetchModels } from "@/core/store/models/modelsSlice";
+import { fetchModels } from "@/core/modules/models/fetchModels";
 import { createUuid } from "@/core/utils/createUuid";
 import { FC, useEffect } from "react";
 

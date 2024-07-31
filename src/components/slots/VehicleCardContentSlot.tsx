@@ -1,15 +1,12 @@
 import { useAppDispatch } from "@/core/hooks/useAppDispatch";
+import { useAppSelector } from "@/core/hooks/useAppSelector";
 import { ModelM } from "@/core/models/model.model";
-import {
-  fetchOneEngine,
-  selectAllEngines,
-} from "@/core/store/engines/enginesSlice";
-import { selectOneMakes } from "@/core/store/makes/makesSlice";
-import { fetchOneTrim, selectAllTrims } from "@/core/store/trims/trimsSlice";
+import { fetchOneEngine } from "@/core/modules/engines";
+import { selectOneMake } from "@/core/modules/makes";
+import { fetchOneTrim, selectAllTrims } from "@/core/modules/trims";
 import { RootState } from "@/core/types/store.type";
 import { Box, useTheme } from "@mui/material";
 import { FC, useEffect } from "react";
-import { useSelector } from "react-redux";
 
 import { Icon } from "@/components/base/icon";
 import { ArrowOutwardLink } from "@/components/navigation/ArrowOutwardLink";
@@ -34,12 +31,10 @@ export const VehicleCardContentSlot: FC<VehicleCardContentSlotProps> = ({
   model,
 }) => {
   const theme = useTheme();
-  const make = useSelector((state: RootState) =>
-    selectOneMakes(state, model.make_id),
-  );
+  const make = useAppSelector((state) => selectOneMake(state, model.make_id));
 
-  const engine = useSelector(selectAllEngines)[0];
-  const trim = useSelector((state: RootState) => selectAllTrims(state))[0];
+  // const engine = useSelector(selectAllEngines)[0];
+  const trim = useAppSelector((state: RootState) => selectAllTrims(state))[0];
 
   const dispatch = useAppDispatch();
 
@@ -68,7 +63,9 @@ export const VehicleCardContentSlot: FC<VehicleCardContentSlotProps> = ({
         </CardContentListItemColumn>
         <CardContentListItemColumn>
           <Icon icon="GasolinePump" size={0.875} />
-          <CardContentSmallText>{engine?.engine_type}</CardContentSmallText>
+          <CardContentSmallText>
+            {/*engine?.engine_type*/ 1}
+          </CardContentSmallText>
         </CardContentListItemColumn>
         <CardContentListItemColumn>
           <Icon icon="GasolinePump" size={0.875} />

@@ -6,19 +6,12 @@ import {
   PostService,
   TrimMService,
 } from "@/core/services";
-import enginesSlice from "@/core/store/engines/enginesSlice";
-import makesSlice from "@/core/store/makes/makesSlice";
-import modelsSlice from "@/core/store/models/modelsSlice";
-import trimsSlice from "@/core/store/trims/trimsSlice";
-import { configureStore } from "@reduxjs/toolkit";
+import { combineSlices, configureStore } from "@reduxjs/toolkit";
+
+export const rootReducer = combineSlices();
 
 export const store = configureStore({
-  reducer: {
-    makes: makesSlice,
-    models: modelsSlice,
-    trims: trimsSlice,
-    engines: enginesSlice,
-  },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: {

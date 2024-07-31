@@ -1,12 +1,12 @@
 import { useAppDispatch } from "@/core/hooks/useAppDispatch";
+import { useAppSelector } from "@/core/hooks/useAppSelector";
 import {
   fetchMakes,
   selectPremiumBrands,
-  selectPremiumBrandsStatus,
-} from "@/core/store/makes/makesSlice";
+  selectBrandsStatus,
+} from "@/core/modules/makes";
 import { Grid, Skeleton } from "@mui/material";
 import { FC, useEffect } from "react";
-import { useSelector } from "react-redux";
 
 import { ZoomInCardMedia } from "@/components/base/elements/ZoomInCardMedia";
 import { NavLink } from "@/components/base/navLink";
@@ -23,8 +23,8 @@ import {
 
 export const PremiumBrands: FC = () => {
   const dispatch = useAppDispatch();
-  const premiumBrands = useSelector(selectPremiumBrands);
-  const premiumBrandsStatus = useSelector(selectPremiumBrandsStatus);
+  const premiumBrands = useAppSelector(selectPremiumBrands);
+  const premiumBrandsStatus = useAppSelector(selectBrandsStatus);
 
   useEffect(() => {
     dispatch(fetchMakes());

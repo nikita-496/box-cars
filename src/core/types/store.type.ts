@@ -1,18 +1,35 @@
-import { BodyService, MakeService, PostService } from "@/core/services";
+import {
+  BodyService,
+  EngineService,
+  MakeService,
+  ModelService,
+  PostService,
+} from "@/core/services";
+import { TrimMService } from "@/core/services/trim.service";
 import { store } from "@/core/store";
 
 export type AppStore = typeof store;
-export type RootState = ReturnType<AppStore["getState"]>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type RootState = any;
 export type AppDispatch = AppStore["dispatch"];
 
-type ExtraArgument = {
+export type ExtraArgument = {
   body: BodyService;
   make: MakeService;
   post: PostService;
+  model: ModelService;
+  trim: TrimMService;
+  engine: EngineService;
 };
 
 export type AsyncThunkConfig = {
   dispatch: AppDispatch;
   state: RootState;
   extra: ExtraArgument;
+};
+
+export type InitialState = {
+  status: string;
+  error: string | undefined;
+  entities: object;
 };
