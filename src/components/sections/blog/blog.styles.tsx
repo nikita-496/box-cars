@@ -1,10 +1,15 @@
 import { Box, useTheme, styled, List } from "@mui/material";
 
+import type { NavLinkProps } from "@/components/base/navLink";
+import type { TypographyProps } from "@/components/base/typography";
+import type { CardProps } from "@/components/designSystem/card/Card";
+import type { TagProps } from "@/components/designSystem/tag/Tag";
+
 import { ListItem } from "@/components/base/elements";
-import { NavLink, NavLinkProps } from "@/components/base/navLink";
-import { Typography, TypographyProps } from "@/components/base/typography";
-import { Card, CardProps } from "@/components/designSystem/card/Card";
-import { Tag, TagProps } from "@/components/designSystem/tag/Tag";
+import { NavLink } from "@/components/base/navLink";
+import { Typography } from "@/components/base/typography";
+import { Card } from "@/components/designSystem/card/Card";
+import { Tag } from "@/components/designSystem/tag/Tag";
 
 export const BlogCardStyled = (props: CardProps) => {
   const theme = useTheme();

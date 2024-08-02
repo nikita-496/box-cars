@@ -1,7 +1,9 @@
 import { Container } from "@/layouts/Layout.styles";
 import { Box, Grid, styled } from "@mui/material";
 
-import { Heading, TypographyProps } from "@/components/base/typography";
+import type { TypographyProps } from "@/components/base/typography";
+
+import { Heading } from "@/components/base/typography";
 
 export const DarkSection = styled("section")(({ theme }) => ({
   backgroundColor: theme.palette.common.black,

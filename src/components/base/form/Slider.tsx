@@ -1,10 +1,7 @@
-import {
-  darken,
-  Slider as MUISlider,
-  SliderProps as MUISliderProps,
-  useTheme,
-} from "@mui/material";
-import { FC } from "react";
+import type { SliderProps as MUISliderProps } from "@mui/material";
+import type { FC } from "react";
+
+import { darken, Slider as MUISlider, useTheme } from "@mui/material";
 
 export type SliderProps = MUISliderProps;
 

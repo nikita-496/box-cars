@@ -1,6 +1,10 @@
+import type { SxProps } from "@mui/material";
+import type { FC } from "react";
+import type React from "react";
+
 import { createUuid } from "@/core/utils/createUuid";
-import { Box, SxProps } from "@mui/material";
-import React, { FC, useState } from "react";
+import { Box } from "@mui/material";
+import { useState } from "react";
 
 import { Tab, Tabs as TabBar } from "@/components/base/elements";
 import { TabPanel } from "@/components/designSystem/tabs/TabPanel";

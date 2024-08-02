@@ -1,5 +1,7 @@
+import type { FC } from "react";
+
 import { LayoutBox, Main } from "@/layouts/Layout.styles";
-import { FC, useState } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Logo } from "@/components/base/brand";

@@ -1,6 +1,9 @@
-import { SelectChangeEvent, SelectProps, styled } from "@mui/material";
+import type { SelectChangeEvent, SelectProps } from "@mui/material";
+import type { FC } from "react";
+
+import { styled } from "@mui/material";
 import { lighten } from "@mui/system";
-import { FC, useState } from "react";
+import { useState } from "react";
 
 import { MenuItem } from "@/components/base/elements";
 import { Select, Checkbox } from "@/components/base/form";

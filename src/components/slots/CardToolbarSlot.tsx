@@ -1,5 +1,6 @@
+import type { FC } from "react";
+
 import { Box, styled, useTheme } from "@mui/material";
-import { FC } from "react";
 
 import { Button } from "@/components/base/button";
 import { Icon } from "@/components/base/icon";

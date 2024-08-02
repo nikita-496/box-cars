@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 export const MangaeAndOrders: FC = () => {
   return <h2>Mangae & Orders</h2>;

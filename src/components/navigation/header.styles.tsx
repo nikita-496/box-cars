@@ -1,3 +1,5 @@
+import type { AppBarProps as MUIAppBarProps } from "@mui/material";
+
 import {
   AppBar as MUIAppBar,
   List as MUIList,
@@ -6,14 +8,12 @@ import {
   Toolbar as MUIToolbar,
   Box,
   Grid,
-  AppBarProps as MUIAppBarProps,
   useTheme,
 } from "@mui/material";
 
-import {
-  NavLink as BaseNavLink,
-  NavLinkProps,
-} from "@/components/base/navLink";
+import type { NavLinkProps } from "@/components/base/navLink";
+
+import { NavLink as BaseNavLink } from "@/components/base/navLink";
 import { Typography as BaseTypography } from "@/components/base/typography";
 
 type AppBarProps = { open?: boolean } & MUIAppBarProps;

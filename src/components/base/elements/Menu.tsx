@@ -1,8 +1,6 @@
-import {
-  Menu as MUIMenu,
-  MenuProps as MUIMenuProps,
-  styled,
-} from "@mui/material";
+import type { MenuProps as MUIMenuProps } from "@mui/material";
+
+import { Menu as MUIMenu, styled } from "@mui/material";
 
 export type MenuProps = MUIMenuProps;
 

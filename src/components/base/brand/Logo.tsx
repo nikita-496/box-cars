@@ -1,5 +1,7 @@
+import type { FC } from "react";
+import type React from "react";
+
 import { useTheme } from "@mui/material";
-import React, { FC } from "react";
 
 export type LogoProps = {
   textColor?: string;

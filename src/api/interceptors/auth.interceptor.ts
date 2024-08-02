@@ -1,7 +1,7 @@
 import { refresh } from "@/api/auth.api";
 import { AUTH_END_POINT } from "@/core/config/api.config";
 import { authStorage } from "@/core/libs/localStorage";
-import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
+import axios, { type AxiosError, type InternalAxiosRequestConfig } from "axios";
 
 const isExpired = (date: string) => {
   try {

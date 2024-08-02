@@ -1,9 +1,6 @@
-import {
-  Tooltip as MUITooltip,
-  TooltipProps as MUITooltipProps,
-  tooltipClasses,
-  styled,
-} from "@mui/material";
+import type { TooltipProps as MUITooltipProps } from "@mui/material";
+
+import { Tooltip as MUITooltip, tooltipClasses, styled } from "@mui/material";
 
 export type TooltipProps = MUITooltipProps;
 

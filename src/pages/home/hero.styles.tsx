@@ -7,13 +7,15 @@ import {
   ListItem as MUIListItem,
 } from "@mui/material";
 
+import type { TypographyProps } from "@/components/base/typography";
+import type { TabsProps } from "@/components/designSystem/tabs/Tabs";
+
 import heroImage from "@/assets/hero-home.jpg";
 import {
   Heading as BaseHeading,
   Typography as BaseTypography,
-  TypographyProps,
 } from "@/components/base/typography";
-import { Tabs, TabsProps } from "@/components/designSystem/tabs/Tabs";
+import { Tabs } from "@/components/designSystem/tabs/Tabs";
 
 const TypographyNavLinkStyled = styled(BaseTypography)(({ theme }) => ({
   fontWeight: theme.typography.fontWeightMedium,

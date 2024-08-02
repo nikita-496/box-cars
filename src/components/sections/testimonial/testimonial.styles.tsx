@@ -1,12 +1,12 @@
 import { Box, darken, List, styled, useTheme } from "@mui/material";
 import { yellow } from "@mui/material/colors";
 
-import {
-  Heading,
+import type {
   HeadingProps,
-  Typography,
   TypographyProps,
 } from "@/components/base/typography";
+
+import { Heading, Typography } from "@/components/base/typography";
 
 export const StarList = styled(List)(() => ({
   display: "flex",

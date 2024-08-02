@@ -1,9 +1,10 @@
-import { baseCarApiClient } from "@/api/clients";
-import { MakeM } from "@/core/models/make.model";
-import { Service } from "@/core/services/service";
-import { API } from "@/core/types/api.type";
+import type { Make } from "@/core/modules/makes/model/domain";
+import type { API } from "@/core/types/api.type";
 
-export class MakeService extends Service<MakeM, API.Response<MakeM>> {
+import { baseCarApiClient } from "@/api/clients";
+import { Service } from "@/core/services/service";
+
+export class MakeService extends Service<Make, API.Response<Make>> {
   constructor() {
     super();
     this.endpoint = "/makes";

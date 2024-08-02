@@ -1,9 +1,8 @@
 import { Grid, ListItem as MUIListItem, styled, useTheme } from "@mui/material";
 
-import {
-  NavLink as BaseNavLink,
-  NavLinkProps,
-} from "@/components/base/navLink";
+import type { NavLinkProps } from "@/components/base/navLink";
+
+import { NavLink as BaseNavLink } from "@/components/base/navLink";
 import { Typography as BaseTypography } from "@/components/base/typography";
 
 export const GridWrapper = styled(Grid)(() => ({

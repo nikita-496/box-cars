@@ -1,8 +1,6 @@
-import {
-  CardProps as MUICardProps,
-  Card as MUICard,
-  styled,
-} from "@mui/material";
+import type { CardProps as MUICardProps } from "@mui/material";
+
+import { Card as MUICard, styled } from "@mui/material";
 
 export type CardWrapperProps = MUICardProps;
 

@@ -1,5 +1,6 @@
+import type { FC } from "react";
+
 import { Grid } from "@mui/material";
-import { FC } from "react";
 
 import testimonial from "@/assets/test-1.jpg";
 import { ListItem } from "@/components/base/elements";

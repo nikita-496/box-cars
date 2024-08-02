@@ -1,5 +1,6 @@
+import type { API } from "@/core/types/api.type";
+
 import { AUTH_END_POINT } from "@/core/config/api.config";
-import { API } from "@/core/types/api.type";
 import axios from "axios";
 
 /**

@@ -1,8 +1,12 @@
-import { Box, BoxProps, styled, useTheme } from "@mui/material";
+import type { BoxProps } from "@mui/material";
 
-import { Button, ButtonProps } from "@/components/base/button";
+import { Box, styled, useTheme } from "@mui/material";
+
+import type { ButtonProps } from "@/components/base/button";
+import type { SelectProps } from "@/components/designSystem/form/Select";
+
+import { Button } from "@/components/base/button";
 import { Select } from "@/components/designSystem/form";
-import { SelectProps } from "@/components/designSystem/form/Select";
 
 export const SearchSelectStyled = styled(Select)(({ theme }) => ({
   padding: "0 1.875em",

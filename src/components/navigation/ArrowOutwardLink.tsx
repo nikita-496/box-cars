@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import type { FC } from "react";
+import type React from "react";
 
 import { Icon } from "@/components/base/icon";
 import {

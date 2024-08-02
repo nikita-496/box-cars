@@ -2,9 +2,10 @@ import {
   BodyService,
   EngineService,
   MakeService,
+  MileageService,
   ModelService,
   PostService,
-  TrimMService,
+  TrimService,
 } from "@/core/services";
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 
@@ -17,11 +18,12 @@ export const store = configureStore({
       thunk: {
         extraArgument: {
           body: new BodyService(),
-          make: new MakeService(),
-          post: new PostService(),
-          model: new ModelService(),
-          trim: new TrimMService(),
           engine: new EngineService(),
+          make: new MakeService(),
+          mileage: new MileageService(),
+          model: new ModelService(),
+          post: new PostService(),
+          trim: new TrimService(),
         },
       },
     }),

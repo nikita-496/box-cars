@@ -1,11 +1,11 @@
-import { FC } from "react";
+import type { FC } from "react";
+
 import { Outlet } from "react-router-dom";
 
+import type { BreadcrumbProps } from "@/components/designSystem/navigation/Breadcrumb";
+
 import { NavLink } from "@/components/base/navLink";
-import {
-  Breadcrumb,
-  BreadcrumbProps,
-} from "@/components/designSystem/navigation/Breadcrumb";
+import { Breadcrumb } from "@/components/designSystem/navigation/Breadcrumb";
 
 const breadcrumbOptions: BreadcrumbProps = {
   options: [

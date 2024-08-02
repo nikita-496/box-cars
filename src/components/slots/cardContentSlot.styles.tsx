@@ -8,8 +8,10 @@ import {
   CardContent as MUICardContent,
 } from "@mui/material";
 
-import { Margin, MarginProps } from "@/components/base/layout";
-import { TypographyProps } from "@/components/base/typography";
+import type { MarginProps } from "@/components/base/layout";
+import type { TypographyProps } from "@/components/base/typography";
+
+import { Margin } from "@/components/base/layout";
 
 export const CardContent = styled(MUICardContent)(() => ({
   padding: "0.9375em 1.6875em 0",

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 export const AccoundAndPayments: FC = () => {
   return <h2>Accound & Payments</h2>;

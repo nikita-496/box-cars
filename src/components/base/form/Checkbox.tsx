@@ -1,8 +1,7 @@
-import {
-  Checkbox as MUICheckbox,
-  CheckboxProps as MUICheckboxProps,
-} from "@mui/material";
-import { FC } from "react";
+import type { CheckboxProps as MUICheckboxProps } from "@mui/material";
+import type { FC } from "react";
+
+import { Checkbox as MUICheckbox } from "@mui/material";
 
 import { Icon } from "@/components/base/icon";
 

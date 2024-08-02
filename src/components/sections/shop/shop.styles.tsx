@@ -1,8 +1,11 @@
 import { styled, useTheme } from "@mui/material";
 
+import type { NavLinkProps } from "@/components/base/navLink";
+import type { TabsProps } from "@/components/designSystem/tabs/Tabs";
+
 import { ListItem } from "@/components/base/elements";
-import { NavLink, NavLinkProps } from "@/components/base/navLink";
-import { Tabs, TabsProps } from "@/components/designSystem/tabs/Tabs";
+import { NavLink } from "@/components/base/navLink";
+import { Tabs } from "@/components/designSystem/tabs/Tabs";
 
 export const TabsStyled = ({ tabItems, content, ...props }: TabsProps) => {
   return (

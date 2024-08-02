@@ -1,5 +1,7 @@
-import { Box, SxProps, useTheme } from "@mui/material";
-import { FC } from "react";
+import type { SxProps } from "@mui/material";
+import type { FC } from "react";
+
+import { Box, useTheme } from "@mui/material";
 
 import { Typography } from "@/components/base/typography";
 

@@ -1,11 +1,11 @@
+import type { FC } from "react";
+
 import { theme } from "@/core/config/themes.config";
 import { createUuid } from "@/core/utils/createUuid";
 import { Box, FormControl, FormControlLabel, RadioGroup } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { Stack } from "@mui/system";
-import { FC } from "react";
 
-import { ContentList } from "@/components/ContentList";
 import { Logo } from "@/components/base/brand";
 import { Button } from "@/components/base/button";
 import { Tooltip } from "@/components/base/elements";
@@ -20,6 +20,7 @@ import {
 import { Icon } from "@/components/base/icon";
 import { NavLink } from "@/components/base/navLink";
 import { Heading, Typography } from "@/components/base/typography";
+import { ContentList } from "@/components/ContentList";
 import { Accrodion } from "@/components/designSystem/accordion/Accrodion";
 import { ControlledAccordion } from "@/components/designSystem/accordion/ControlledAccordion";
 import { Card } from "@/components/designSystem/card/Card";

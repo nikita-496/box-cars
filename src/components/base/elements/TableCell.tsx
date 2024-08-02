@@ -1,11 +1,12 @@
+import type { TableCellProps as MUITableCellProps } from "@mui/material";
+import type { FC } from "react";
+
 import {
   TableCell as MUITableCell,
-  TableCellProps as MUITableCellProps,
   tableCellClasses,
   lighten,
   useTheme,
 } from "@mui/material";
-import { FC } from "react";
 
 export type TableCellProps = MUITableCellProps;
 

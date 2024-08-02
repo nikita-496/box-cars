@@ -1,6 +1,10 @@
-import { Box, BoxProps, useTheme } from "@mui/material";
+import type { BoxProps } from "@mui/material";
 
-import { NavLink, NavLinkProps } from "@/components/base/navLink";
+import { Box, useTheme } from "@mui/material";
+
+import type { NavLinkProps } from "@/components/base/navLink";
+
+import { NavLink } from "@/components/base/navLink";
 
 export const NavLinkStyled = ({ color, ...props }: NavLinkProps) => {
   const theme = useTheme();

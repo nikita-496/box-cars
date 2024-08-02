@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 import PopularCardImage from "@/assets/car-1.jpg";
 import { CardWrapper } from "@/components/cards/card.styles";

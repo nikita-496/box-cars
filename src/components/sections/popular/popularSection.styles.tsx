@@ -1,6 +1,8 @@
 import { darken, useTheme } from "@mui/material";
 
-import { Tabs, TabsProps } from "@/components/designSystem/tabs/Tabs";
+import type { TabsProps } from "@/components/designSystem/tabs/Tabs";
+
+import { Tabs } from "@/components/designSystem/tabs/Tabs";
 
 export const TabStyled = ({ tabItems, content, ...props }: TabsProps) => {
   const theme = useTheme();

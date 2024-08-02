@@ -1,5 +1,6 @@
+import type { FC } from "react";
+
 import { createUuid } from "@/core/utils/createUuid";
-import { FC } from "react";
 
 import { PopularCard } from "@/components/cards/PopularCard";
 import { ArrowOutwardLink } from "@/components/navigation/ArrowOutwardLink";

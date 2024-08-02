@@ -1,5 +1,6 @@
-import { SxProps } from "@mui/system";
-import React, { FC } from "react";
+import type { SxProps } from "@mui/system";
+import type { FC } from "react";
+import type React from "react";
 
 import { CardWrapper } from "@/components/base/elements";
 

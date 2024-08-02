@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 import {
   Box,
   CardContent,
@@ -9,7 +11,6 @@ import {
   styled,
   useTheme,
 } from "@mui/material";
-import { FC } from "react";
 
 import { Icon } from "@/components/base/icon";
 import { NavLink } from "@/components/base/navLink";

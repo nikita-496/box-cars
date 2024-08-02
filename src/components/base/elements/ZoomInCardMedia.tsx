@@ -1,6 +1,9 @@
-import { StyleOperator } from "@/core/types/components/styleOperator.type";
-import { CardMedia, SxProps } from "@mui/material";
-import React, { FC } from "react";
+import type { StyleOperator } from "@/core/types/components/styleOperator.type";
+import type { SxProps } from "@mui/material";
+import type { FC } from "react";
+import type React from "react";
+
+import { CardMedia } from "@mui/material";
 
 export type ZoomInCardMediaProps = {
   media?: string;

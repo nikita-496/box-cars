@@ -1,18 +1,17 @@
+import type { TypographyProps, ListItemProps } from "@mui/material";
+
 import {
   Box,
   ListItem as MUIListItem,
   Grid as MUIGrid,
   styled,
-  TypographyProps,
   useTheme,
-  ListItemProps,
   Grid,
 } from "@mui/material";
 
-import {
-  NavLink as BaseNavLink,
-  NavLinkProps,
-} from "@/components/base/navLink";
+import type { NavLinkProps } from "@/components/base/navLink";
+
+import { NavLink as BaseNavLink } from "@/components/base/navLink";
 import { Typography as BaseTypogrphy } from "@/components/base/typography";
 import { Heading, List } from "@/components/navigation/footer.styles";
 

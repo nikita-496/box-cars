@@ -8,8 +8,12 @@ module.exports = {
     "plugin:prettier/recommended",
     "plugin:react/jsx-runtime",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts"],
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: "tsconfig.json",
+  },
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh", "react", "@typescript-eslint", "perfectionist"],
   rules: {
@@ -22,6 +26,8 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "@typescript-eslint/consistent-type-exports": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/naming-convention": [
       "error",
       {
@@ -32,12 +38,11 @@ module.exports = {
       {
         selector: "typeParameter",
         format: ["PascalCase"],
-        custom: { regex: "^T[A-Z]", match: true },
       },
     ],
     "@typescript-eslint/no-explicit-any": ["error"],
     "@typescript-eslint/no-unused-vars": [
-      "error",
+      "warn",
       {
         vars: "all",
         args: "all",
@@ -46,12 +51,9 @@ module.exports = {
     "perfectionist/sort-imports": [
       "error",
       {
-        type: "natural",
-        order: "asc",
         groups: [
           "type",
           "react",
-          "nanostores",
           ["builtin", "external"],
           "internal-type",
           "internal",
@@ -72,6 +74,5 @@ module.exports = {
         ],
       },
     ],
-    "no-duplicate-imports": ["error"],
   },
 };

@@ -1,8 +1,14 @@
-import { Grid, lighten, styled, Theme } from "@mui/material";
+import type { Theme } from "@mui/material";
 
-import { Button, ButtonProps } from "@/components/base/button";
-import { TextField, TextFieldProps } from "@/components/base/form";
-import { Heading, TypographyProps } from "@/components/base/typography";
+import { Grid, lighten, styled } from "@mui/material";
+
+import type { ButtonProps } from "@/components/base/button";
+import type { TextFieldProps } from "@/components/base/form";
+import type { TypographyProps } from "@/components/base/typography";
+
+import { Button } from "@/components/base/button";
+import { TextField } from "@/components/base/form";
+import { Heading } from "@/components/base/typography";
 
 export const JoinGrid = styled(Grid)(() => ({
   padding: "8.75em 0 3.75em",

@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import type { AxiosResponse } from "axios";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace API {

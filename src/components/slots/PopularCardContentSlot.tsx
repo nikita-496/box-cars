@@ -1,5 +1,6 @@
+import type { FC } from "react";
+
 import { Box, useTheme } from "@mui/material";
-import { FC } from "react";
 
 import { Icon } from "@/components/base/icon";
 import { ArrowOutwardLink } from "@/components/navigation/ArrowOutwardLink";

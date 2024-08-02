@@ -1,13 +1,13 @@
-import type { Model } from "@/core/modules/models/api";
+import type { Mileage } from "@/core/modules/mileage";
 import type { API } from "@/core/types/api.type";
 
 import { baseCarApiClient } from "@/api/clients";
 import { Service } from "@/core/services/service";
 
-export class ModelService extends Service<Model, API.Response<Model>> {
+export class MileageService extends Service<Mileage, API.Response<Mileage>> {
   constructor() {
     super();
-    this.endpoint = "/models";
+    this.endpoint = "/mileages";
     this.baseApi = baseCarApiClient;
   }
 }

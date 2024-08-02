@@ -1,5 +1,7 @@
-import { SvgIcon as MuiSvgIcon, SvgIconProps, styled } from "@mui/material";
-import { FC } from "react";
+import type { SvgIconProps } from "@mui/material";
+import type { FC } from "react";
+
+import { SvgIcon as MuiSvgIcon, styled } from "@mui/material";
 
 const SvgIcon = styled(MuiSvgIcon, {
   name: "Geolocation",

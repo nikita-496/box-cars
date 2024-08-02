@@ -1,8 +1,6 @@
-import {
-  Switch as MUISwitch,
-  SwitchProps as MUISwitchProps,
-  styled,
-} from "@mui/material";
+import type { SwitchProps as MUISwitchProps } from "@mui/material";
+
+import { Switch as MUISwitch, styled } from "@mui/material";
 
 export type SwitchProps = MUISwitchProps;
 

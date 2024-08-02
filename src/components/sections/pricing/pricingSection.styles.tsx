@@ -1,11 +1,10 @@
 import { Box, Grid, List, styled, useTheme } from "@mui/material";
 
+import type { ArrowOutwardLinkProps } from "@/components/navigation/ArrowOutwardLink";
+
 import { ListItem } from "@/components/base/elements";
 import { Typography } from "@/components/base/typography";
-import {
-  ArrowOutwardLink,
-  ArrowOutwardLinkProps,
-} from "@/components/navigation/ArrowOutwardLink";
+import { ArrowOutwardLink } from "@/components/navigation/ArrowOutwardLink";
 import { HeadingSection } from "@/components/sections/sections.styles";
 
 export const PricingHeading = styled(HeadingSection)(() => ({

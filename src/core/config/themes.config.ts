@@ -1,7 +1,8 @@
+import type { Color, PaletteColor } from "@mui/material";
+
 import { color } from "@/core/config/designTokens/color";
 import { font } from "@/core/config/designTokens/font";
 import { BREAKPOINTS } from "@/core/constants/breakpoints";
-import { Color, PaletteColor } from "@mui/material";
 import { createTheme, getContrastRatio } from "@mui/material/styles";
 import { createBreakpoints } from "@mui/system";
 

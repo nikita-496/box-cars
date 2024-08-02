@@ -1,6 +1,7 @@
-import { HeaderLink } from "@/core/types/components/header.type";
+import type { HeaderLink } from "@/core/types/components/header.type";
+import type { FC, ReactNode } from "react";
+
 import { Grid, useMediaQuery } from "@mui/material";
-import { FC, ReactNode } from "react";
 
 import { Icon } from "@/components/base/icon";
 import { NavLink as BaseNavLink } from "@/components/base/navLink";

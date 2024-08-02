@@ -1,5 +1,7 @@
-import { Box, Fade, SxProps } from "@mui/material";
-import { FC, PropsWithChildren } from "react";
+import type { SxProps } from "@mui/material";
+import type { FC, PropsWithChildren } from "react";
+
+import { Box, Fade } from "@mui/material";
 
 type TabPanelProps = {
   index: number;

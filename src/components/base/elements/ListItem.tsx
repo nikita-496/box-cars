@@ -1,9 +1,8 @@
-import {
-  ListItem as MUIListItem,
-  ListItemProps as MUIListItemProps,
-} from "@mui/material";
+import type { ListItemProps as MUIListItemProps } from "@mui/material";
+import type { FC } from "react";
+
+import { ListItem as MUIListItem } from "@mui/material";
 import { styled } from "@mui/system";
-import { FC } from "react";
 
 export type ListItemProps = MUIListItemProps;
 

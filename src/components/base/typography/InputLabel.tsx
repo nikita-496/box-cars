@@ -1,9 +1,7 @@
-import {
-  InputLabel as MUIInputLabel,
-  InputLabelProps as MUIInputLabelProps,
-  useTheme,
-} from "@mui/material";
-import { FC } from "react";
+import type { InputLabelProps as MUIInputLabelProps } from "@mui/material";
+import type { FC } from "react";
+
+import { InputLabel as MUIInputLabel, useTheme } from "@mui/material";
 export type InputLabelProps = MUIInputLabelProps;
 
 export const InputLabel: FC<InputLabelProps> = ({

@@ -1,5 +1,7 @@
+import type { FC } from "react";
+
 import { styled } from "@mui/material";
-import { FC, useState } from "react";
+import { useState } from "react";
 
 import { Menu, MenuItem } from "@/components/base/elements";
 import { NavLink } from "@/components/base/navLink";

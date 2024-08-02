@@ -1,6 +1,10 @@
-import { FC, useState } from "react";
+import type { FC } from "react";
 
-import { Slider, SliderProps } from "@/components/base/form";
+import { useState } from "react";
+
+import type { SliderProps } from "@/components/base/form";
+
+import { Slider } from "@/components/base/form";
 
 type RangeSliderProps = SliderProps;
 

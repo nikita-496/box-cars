@@ -1,8 +1,10 @@
+import type { FC } from "react";
+
 import { Grid } from "@mui/material";
-import { FC } from "react";
+
+import type { IconName } from "@/components/base/icon/Icon";
 
 import { Icon } from "@/components/base/icon";
-import { IconName } from "@/components/base/icon/Icon";
 import {
   HeadingSection,
   SectionContainer,

@@ -1,9 +1,7 @@
-import {
-  Radio as MUIRadio,
-  RadioProps as MUIRadioProps,
-  useTheme,
-} from "@mui/material";
-import { FC } from "react";
+import type { RadioProps as MUIRadioProps } from "@mui/material";
+import type { FC } from "react";
+
+import { Radio as MUIRadio, useTheme } from "@mui/material";
 
 import { Icon } from "@/components/base/icon";
 

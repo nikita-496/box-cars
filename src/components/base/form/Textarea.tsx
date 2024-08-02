@@ -1,5 +1,7 @@
-import { TextField, TextFieldProps, useTheme } from "@mui/material";
-import { FC } from "react";
+import type { TextFieldProps } from "@mui/material";
+import type { FC } from "react";
+
+import { TextField, useTheme } from "@mui/material";
 type TextareaProps = TextFieldProps;
 
 export const Textarea: FC<TextareaProps> = ({

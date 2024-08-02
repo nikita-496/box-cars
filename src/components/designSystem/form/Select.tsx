@@ -1,11 +1,12 @@
-import { SelectChangeEvent } from "@mui/material";
-import { FC, useState } from "react";
+import type { SelectChangeEvent } from "@mui/material";
+import type { FC } from "react";
+
+import { useState } from "react";
+
+import type { SelectProps as BaseSelectProps } from "@/components/base/form";
 
 import { MenuItem } from "@/components/base/elements";
-import {
-  Select as BaseSelect,
-  SelectProps as BaseSelectProps,
-} from "@/components/base/form";
+import { Select as BaseSelect } from "@/components/base/form";
 import { InputLabel, Typography } from "@/components/base/typography";
 
 export type SelectProps = {

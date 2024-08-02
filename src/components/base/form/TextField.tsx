@@ -1,10 +1,7 @@
-import {
-  TextField as MUITextField,
-  TextFieldProps as MUITextFieldProps,
-  styled,
-  useTheme,
-} from "@mui/material";
-import { FC } from "react";
+import type { TextFieldProps as MUITextFieldProps } from "@mui/material";
+import type { FC } from "react";
+
+import { TextField as MUITextField, styled, useTheme } from "@mui/material";
 
 export type TextFieldProps = MUITextFieldProps;
 

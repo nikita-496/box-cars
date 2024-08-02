@@ -1,4 +1,4 @@
-import { BodyM } from "@/core/models/body.model";
+import type { BodyM } from "@/core/models/body";
 
 export type BodyResponse = {
   status: 0;

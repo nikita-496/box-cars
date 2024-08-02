@@ -6,6 +6,10 @@ import {
   Container,
 } from "@mui/material";
 
+import type { TypographyProps } from "@/components/base/typography";
+
+import { Heading as HeadingBase } from "@/components/base/typography";
+
 export const FooterDivider = styled(Divider)(({ theme }) => ({
   backgroundColor: lighten(theme.palette.common.black, 0.2),
 }));
@@ -24,11 +28,6 @@ export const StyledContainer = styled(Container)(({ theme }) => ({
     maxWidth: "89.375em",
   },
 }));
-
-import {
-  Heading as HeadingBase,
-  TypographyProps,
-} from "@/components/base/typography";
 
 export const List = styled(MUIList)(() => ({
   display: "flex",

@@ -1,6 +1,7 @@
+import type { BoxProps } from "@mui/system";
+import type { FC } from "react";
+
 import { Box } from "@mui/material";
-import { BoxProps } from "@mui/system";
-import { FC } from "react";
 
 enum MarginType {
   SMALL = "0.75em",

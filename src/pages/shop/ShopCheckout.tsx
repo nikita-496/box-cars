@@ -1,9 +1,8 @@
-import { FC } from "react";
+import type { FC } from "react";
 
-import {
-  Breadcrumb,
-  BreadcrumbProps,
-} from "@/components/designSystem/navigation/Breadcrumb";
+import type { BreadcrumbProps } from "@/components/designSystem/navigation/Breadcrumb";
+
+import { Breadcrumb } from "@/components/designSystem/navigation/Breadcrumb";
 
 const breadcrumbOptions: BreadcrumbProps = {
   options: [

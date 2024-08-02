@@ -1,8 +1,6 @@
-import {
-  Tabs as MUITabs,
-  TabsProps as MUITabsProps,
-  styled,
-} from "@mui/material";
+import type { TabsProps as MUITabsProps } from "@mui/material";
+
+import { Tabs as MUITabs, styled } from "@mui/material";
 
 export type TabsProps = {
   value: number;

@@ -1,10 +1,10 @@
 import { useTheme } from "@mui/material";
 
-import {
-  ZoomInCardMedia,
-  ZoomInCardMediaProps,
-} from "@/components/base/elements/ZoomInCardMedia";
-import { Card, CardProps } from "@/components/designSystem/card/Card";
+import type { ZoomInCardMediaProps } from "@/components/base/elements/ZoomInCardMedia";
+import type { CardProps } from "@/components/designSystem/card/Card";
+
+import { ZoomInCardMedia } from "@/components/base/elements/ZoomInCardMedia";
+import { Card } from "@/components/designSystem/card/Card";
 
 export const PopularCardStyled = (props: CardProps) => {
   const theme = useTheme();

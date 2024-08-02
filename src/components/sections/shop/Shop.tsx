@@ -1,6 +1,7 @@
+import type { FC } from "react";
+
 import { createUuid } from "@/core/utils/createUuid";
 import { Grid, List } from "@mui/material";
-import { FC } from "react";
 
 import { ArrowOutwardLink } from "@/components/navigation/ArrowOutwardLink";
 import {

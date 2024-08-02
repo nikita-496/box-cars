@@ -1,7 +1,8 @@
-import { createUuid } from "@/core/utils/createUuid";
-import { FC, useState } from "react";
+import type { FC } from "react";
 
-import { ContentList } from "@/components/ContentList";
+import { createUuid } from "@/core/utils/createUuid";
+import { useState } from "react";
+
 import {
   AccordionWrapper,
   AccordionDetails,
@@ -9,6 +10,7 @@ import {
 } from "@/components/base/elements";
 import { Icon } from "@/components/base/icon";
 import { Typography } from "@/components/base/typography";
+import { ContentList } from "@/components/ContentList";
 
 const accordionContent = [
   {

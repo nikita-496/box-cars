@@ -1,6 +1,7 @@
-import { HeaderLink } from "@/core/types/components/header.type";
+import type { HeaderLink } from "@/core/types/components/header.type";
+import type { FC, PropsWithChildren } from "react";
+
 import { Divider, useTheme } from "@mui/material";
-import { FC, PropsWithChildren } from "react";
 
 import { Icon } from "@/components/base/icon";
 import {

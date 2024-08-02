@@ -1,5 +1,6 @@
+import type { FC } from "react";
+
 import { Box, Grid } from "@mui/material";
-import { FC } from "react";
 import {
   FaApple,
   FaFacebookF,

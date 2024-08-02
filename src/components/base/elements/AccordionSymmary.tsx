@@ -1,8 +1,6 @@
-import {
-  AccordionSummary as MUIAccordionSummary,
-  AccordionSummaryProps as MUIAccordionSummaryProps,
-  styled,
-} from "@mui/material";
+import type { AccordionSummaryProps as MUIAccordionSummaryProps } from "@mui/material";
+
+import { AccordionSummary as MUIAccordionSummary, styled } from "@mui/material";
 
 export type AccordionSummaryProps = MUIAccordionSummaryProps;
 

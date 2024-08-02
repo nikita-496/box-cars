@@ -1,12 +1,13 @@
-import {
+import type {
   BodyService,
   EngineService,
   MakeService,
   ModelService,
   PostService,
 } from "@/core/services";
-import { TrimMService } from "@/core/services/trim.service";
-import { store } from "@/core/store";
+import type { TrimService } from "@/core/services/trim.service";
+import type { store } from "@/core/store";
+import type { ThunkAction, UnknownAction } from "@reduxjs/toolkit";
 
 export type AppStore = typeof store;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,7 +19,7 @@ export type ExtraArgument = {
   make: MakeService;
   post: PostService;
   model: ModelService;
-  trim: TrimMService;
+  trim: TrimService;
   engine: EngineService;
 };
 
@@ -28,8 +29,9 @@ export type AsyncThunkConfig = {
   extra: ExtraArgument;
 };
 
-export type InitialState = {
-  status: string;
-  error: string | undefined;
-  entities: object;
-};
+export type AppThunk<R = void> = ThunkAction<
+  R,
+  RootState,
+  ExtraArgument,
+  UnknownAction
+>;

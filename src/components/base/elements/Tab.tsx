@@ -1,4 +1,6 @@
-import { Tab as MUITab, TabProps as MUITabProps, styled } from "@mui/material";
+import type { TabProps as MUITabProps } from "@mui/material";
+
+import { Tab as MUITab, styled } from "@mui/material";
 
 type TabProps = MUITabProps;
 

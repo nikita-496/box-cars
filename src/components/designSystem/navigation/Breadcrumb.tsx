@@ -1,6 +1,7 @@
+import type { FC } from "react";
+import type { RelativeRoutingType } from "react-router-dom";
+
 import { createUuid } from "@/core/utils/createUuid";
-import { FC } from "react";
-import { RelativeRoutingType } from "react-router-dom";
 
 import { NavLink } from "@/components/base/navLink/NavLink";
 

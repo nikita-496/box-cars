@@ -1,10 +1,6 @@
-import {
-  Select as MUISelect,
-  SelectProps as MUISelectProps,
-  OutlinedInput,
-  SxProps,
-  useTheme,
-} from "@mui/material";
+import type { SelectProps as MUISelectProps, SxProps } from "@mui/material";
+
+import { Select as MUISelect, OutlinedInput, useTheme } from "@mui/material";
 
 import { ArrowDown } from "@/components/base/icon/icons/ArrowDown";
 

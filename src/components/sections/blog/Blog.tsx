@@ -1,6 +1,7 @@
+import type { FC } from "react";
+
 import { createUuid } from "@/core/utils/createUuid";
 import { Grid } from "@mui/material";
-import { FC } from "react";
 
 import blogImage from "@/assets/blog-1.jpg";
 import { ZoomInCardMedia } from "@/components/base/elements/ZoomInCardMedia";

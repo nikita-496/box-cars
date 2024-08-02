@@ -1,6 +1,8 @@
+import type { API } from "@/core/types/api.type";
+import type { AxiosInstance, AxiosRequestConfig } from "axios";
+
 import { apiRoutes } from "@/core/config/routes.config";
-import { API } from "@/core/types/api.type";
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import axios from "axios";
 
 interface IService<
   TModel extends object,

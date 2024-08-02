@@ -1,9 +1,8 @@
+import type { FC } from "react";
+import type { NavLinkProps as ReactRouterNavLinkProps } from "react-router-dom";
+
 import { useTheme } from "@mui/material";
-import { FC } from "react";
-import {
-  NavLink as ReactRouterNavLink,
-  NavLinkProps as ReactRouterNavLinkProps,
-} from "react-router-dom";
+import { NavLink as ReactRouterNavLink } from "react-router-dom";
 
 export type NavLinkProps = {
   color?: string;

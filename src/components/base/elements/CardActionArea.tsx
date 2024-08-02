@@ -1,8 +1,6 @@
-import {
-  CardActionArea as MUICardActionArea,
-  CardActionAreaProps as MUICardActionAreaProps,
-  styled,
-} from "@mui/material";
+import type { CardActionAreaProps as MUICardActionAreaProps } from "@mui/material";
+
+import { CardActionArea as MUICardActionArea, styled } from "@mui/material";
 
 export type CardActionAreaProps = MUICardActionAreaProps;
 

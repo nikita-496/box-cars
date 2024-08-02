@@ -1,5 +1,6 @@
+import type { API } from "@/core/types/api.type";
+
 import { storagePrefix } from "@/core/config/storage.config";
-import { API } from "@/core/types/api.type";
 
 interface IStorageFacrory<TStorageContent> {
   get: () => void;
@@ -7,7 +8,7 @@ interface IStorageFacrory<TStorageContent> {
   clear: () => void;
 }
 
-class StorageFacrory<TStorageContent>
+class StorageFactory<TStorageContent>
   implements IStorageFacrory<TStorageContent>
 {
   private readonly key: string;
@@ -45,4 +46,4 @@ class StorageFacrory<TStorageContent>
   }
 }
 
-export const authStorage = new StorageFacrory<API.Auth.AuthResonse>("auth");
+export const authStorage = new StorageFactory<API.Auth.AuthResonse>("auth");

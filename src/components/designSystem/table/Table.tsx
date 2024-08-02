@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 import { createUuid } from "@/core/utils/createUuid";
 import {
   Table as MUITable,
@@ -5,7 +7,6 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { FC } from "react";
 
 import { TableCell } from "@/components/base/elements";
 

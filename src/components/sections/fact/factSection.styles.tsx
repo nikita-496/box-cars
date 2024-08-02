@@ -1,6 +1,8 @@
 import { Box, styled } from "@mui/material";
 
-import { Typography, TypographyProps } from "@/components/base/typography";
+import type { TypographyProps } from "@/components/base/typography";
+
+import { Typography } from "@/components/base/typography";
 import { GridItemColumn } from "@/components/sections/sections.styles";
 
 export const FactSectionStyled = styled("section")(() => ({

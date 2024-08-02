@@ -1,7 +1,8 @@
+import type { BodyM } from "@/core/models/body";
+import type { API } from "@/core/types/api.type";
+
 import { baseCarApiClient } from "@/api/clients";
-import { BodyM } from "@/core/models/body.model";
 import { Service } from "@/core/services/service";
-import { API } from "@/core/types/api.type";
 
 export class BodyService extends Service<BodyM, API.Response<BodyM>> {
   constructor() {

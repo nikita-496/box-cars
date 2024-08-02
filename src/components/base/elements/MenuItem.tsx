@@ -1,8 +1,6 @@
-import {
-  MenuItem as MUIMenuItem,
-  MenuItemProps as MUIMenuItemProps,
-  styled,
-} from "@mui/material";
+import type { MenuItemProps as MUIMenuItemProps } from "@mui/material";
+
+import { MenuItem as MUIMenuItem, styled } from "@mui/material";
 
 export type MenuItemProps = MUIMenuItemProps;
 
